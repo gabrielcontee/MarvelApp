@@ -15,6 +15,7 @@
 		3146E743217B6E00008F21E5 /* MarvelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E742217B6E00008F21E5 /* MarvelAppUITests.swift */; };
 		3146E757217B7676008F21E5 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E756217B7676008F21E5 /* UIView.swift */; };
 		3146E759217B76D1008F21E5 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E758217B76D1008F21E5 /* IntroductionViewController.swift */; };
+		3146E75B217B7D11008F21E5 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E75A217B7D11008F21E5 /* HeroesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3146E744217B6E00008F21E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3146E756217B7676008F21E5 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		3146E758217B76D1008F21E5 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
+		3146E75A217B7D11008F21E5 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				3146E755217B766A008F21E5 /* Extension */,
 				3146E726217B6DFE008F21E5 /* Main.storyboard */,
 				3146E758217B76D1008F21E5 /* IntroductionViewController.swift */,
+				3146E75A217B7D11008F21E5 /* HeroesViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			files = (
 				3146E757217B7676008F21E5 /* UIView.swift in Sources */,
 				3146E759217B76D1008F21E5 /* IntroductionViewController.swift in Sources */,
+				3146E75B217B7D11008F21E5 /* HeroesViewController.swift in Sources */,
 				3146E723217B6DFE008F21E5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
