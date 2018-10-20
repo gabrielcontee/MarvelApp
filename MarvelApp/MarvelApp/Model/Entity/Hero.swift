@@ -8,7 +8,10 @@
 
 import Foundation
 
-class Hero: NSObject{
+public struct Hero: Decodable{
     
-    
+    let id: Int
+    let name: String?
+    let description: String?
+    let imagePath: String?
 }
