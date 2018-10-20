@@ -33,6 +33,9 @@
                                         <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="AlT-E2-1Ni" kind="show" id="gBh-Hx-PPR"/>
+                                </connections>
                             </button>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QaM-ad-ug4">
                                 <rect key="frame" x="16" y="259.5" width="343" height="148"/>
@@ -76,6 +79,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="887.20000000000005" y="27.436281859070466"/>
+        </scene>
+        <!--Heroes View Controller-->
+        <scene sceneID="vQ5-HW-RjM">
+            <objects>
+                <viewController id="AlT-E2-1Ni" customClass="HeroesViewController" customModule="MarvelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2ys-AD-4xX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c4v-QI-ozB">
+                                <rect key="frame" x="16" y="96" width="343" height="539"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LVP-rl-8Rt">
+                                    <size key="itemSize" width="240" height="129"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="heroCell" id="nh7-oz-bgj" customClass="HeroCell" customModule="MarvelApp" customModuleProvider="target">
+                                        <rect key="frame" x="51.5" y="0.0" width="240" height="129"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="129"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SaJ-6L-sfc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="129"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="SaJ-6L-sfc" firstAttribute="top" secondItem="nh7-oz-bgj" secondAttribute="top" id="VTy-EV-pmV"/>
+                                            <constraint firstAttribute="bottom" secondItem="SaJ-6L-sfc" secondAttribute="bottom" id="Xrm-sL-1ZE"/>
+                                            <constraint firstItem="SaJ-6L-sfc" firstAttribute="leading" secondItem="nh7-oz-bgj" secondAttribute="leading" id="rIb-Ju-ZY0"/>
+                                            <constraint firstAttribute="trailing" secondItem="SaJ-6L-sfc" secondAttribute="trailing" id="rVL-eS-V6P"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="heroImageView" destination="SaJ-6L-sfc" id="6mM-wg-awN"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mxg-V8-BVu" firstAttribute="trailing" secondItem="c4v-QI-ozB" secondAttribute="trailing" constant="16" id="AMg-eb-auC"/>
+                            <constraint firstItem="c4v-QI-ozB" firstAttribute="top" secondItem="mxg-V8-BVu" secondAttribute="top" constant="32" id="JSH-bS-yfu"/>
+                            <constraint firstItem="mxg-V8-BVu" firstAttribute="bottom" secondItem="c4v-QI-ozB" secondAttribute="bottom" constant="32" id="UaY-9H-YOf"/>
+                            <constraint firstItem="c4v-QI-ozB" firstAttribute="leading" secondItem="mxg-V8-BVu" secondAttribute="leading" constant="16" id="rFB-YO-k58"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mxg-V8-BVu"/>
+                    </view>
+                    <connections>
+                        <outlet property="heroesCollectionView" destination="c4v-QI-ozB" id="ifS-0g-f3U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CL2-Qb-A8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1748" y="26.53673163418291"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="frM-OI-BjW">
