@@ -17,13 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvel_logo" translatesAutoresizingMaskIntoConstraints="NO" id="hvt-w8-k2r">
-                                <rect key="frame" x="32" y="269.5" width="311" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="lcm-1I-gdF"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxE-3B-5dt">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxE-3B-5dt">
                                 <rect key="frame" x="137.5" y="587" width="100" height="48"/>
                                 <color key="backgroundColor" red="0.91764705882352937" green="0.13333333333333333" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -34,20 +28,50 @@
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QaM-ad-ug4">
+                                <rect key="frame" x="16" y="259.5" width="343" height="148"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvel_logo" translatesAutoresizingMaskIntoConstraints="NO" id="hvt-w8-k2r">
+                                        <rect key="frame" x="16" y="8" width="311" height="132"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.13333333333333333" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hvt-w8-k2r" secondAttribute="trailing" constant="16" id="9Kf-dy-58c"/>
+                                    <constraint firstItem="hvt-w8-k2r" firstAttribute="top" secondItem="QaM-ad-ug4" secondAttribute="top" constant="8" id="Ah9-vW-rvo"/>
+                                    <constraint firstItem="hvt-w8-k2r" firstAttribute="leading" secondItem="QaM-ad-ug4" secondAttribute="leading" constant="16" id="H11-he-aLR"/>
+                                    <constraint firstAttribute="bottom" secondItem="hvt-w8-k2r" secondAttribute="bottom" constant="8" id="bKH-7r-hoi"/>
+                                    <constraint firstAttribute="height" constant="148" id="pTR-OG-XkS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QxE-3B-5dt" secondAttribute="bottom" constant="32" id="JzH-ZJ-tIQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hvt-w8-k2r" secondAttribute="trailing" constant="32" id="XtP-cp-8BW"/>
-                            <constraint firstItem="hvt-w8-k2r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zse-77-k0G"/>
-                            <constraint firstItem="hvt-w8-k2r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="gu6-mj-JGT"/>
+                            <constraint firstItem="QaM-ad-ug4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="PWq-uz-jgg"/>
+                            <constraint firstItem="QaM-ad-ug4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pbb-ZS-Obi"/>
+                            <constraint firstItem="QaM-ad-ug4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bvF-Wh-MYq"/>
                             <constraint firstItem="QxE-3B-5dt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qAa-cg-Zj9"/>
-                            <constraint firstItem="hvt-w8-k2r" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rez-jF-qhy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QaM-ad-ug4" secondAttribute="trailing" constant="16" id="ro9-L7-Cfe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="lep-1n-ihd"/>
+                    <connections>
+                        <outlet property="marvelView" destination="QaM-ad-ug4" id="QFX-2P-anf"/>
+                        <outlet property="startButton" destination="QxE-3B-5dt" id="C3e-7q-xv1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
