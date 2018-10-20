@@ -1,0 +1,14 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '12.0'
+use_frameworks!
+
+
+target 'MarvelApp' do
+    pod 'CryptoSwift'
+end
+
+target 'MarvelAppTests' do
+    pod 'CryptoSwift'
+end
+
+

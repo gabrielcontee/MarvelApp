@@ -26,7 +26,15 @@ class HeroesDataSourceTest: XCTestCase {
     
     
     func testHeroesFetch() {
-        
+        let expectation = self.expectation(description: "heroesResult")
+        dataSource.fetchHeroes {
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 8, handler: nil)
+        XCTAssertNotEqual(dataSource.heroes.count, 0)
+        XCTAssertNotNil(dataSource.heroes)
+        XCTAssertNotEqual(dataSource.heroes[0]!.name, "")
+        XCTAssertNotNil(dataSource.heroes.first!)
     }
     
     func testPerformanceExample() {

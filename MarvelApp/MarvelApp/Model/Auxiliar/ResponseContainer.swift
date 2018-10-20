@@ -1,5 +1,5 @@
 //
-//  Hero.swift
+//  ResponseContainer.swift
 //  MarvelApp
 //
 //  Created by Gabriel Conte on 20/10/18.
@@ -8,10 +8,7 @@
 
 import Foundation
 
-struct Hero: Decodable{
-    
-    let id: Int
-    let name: String?
-    let description: String?
-    let thumbnail: Image?
+struct ResponseContainer<Results: Decodable>: Decodable {
+    let count: Int
+    let results: Results
 }
