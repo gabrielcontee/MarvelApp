@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CryptoSwift
 
 protocol APIClient {
     func send<T: APIRequest>(_ request: T, completion: @escaping ResultCallback<T.Response>)
@@ -64,7 +65,7 @@ class ClientAPI {
         
         // Common query items needed for all Marvel requests
         let timestamp = "\(Date().timeIntervalSince1970)"
-        let hash = "\(timestamp)\(privateKey)\(publicKey)".md5
+        let hash = "\(timestamp)\(privateKey)\(publicKey)".md5()
         let commonQueryItems = [
             URLQueryItem(name: "ts", value: timestamp),
             URLQueryItem(name: "hash", value: hash),
