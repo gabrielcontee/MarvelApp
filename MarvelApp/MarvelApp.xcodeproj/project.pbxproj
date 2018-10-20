@@ -21,6 +21,7 @@
 		3146E769217B81DB008F21E5 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E768217B81DB008F21E5 /* Hero.swift */; };
 		3146E76B217B86F1008F21E5 /* HeroesPopulationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E76A217B86F1008F21E5 /* HeroesPopulationTest.swift */; };
 		3146E76D217B9887008F21E5 /* HeroesDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E76C217B9887008F21E5 /* HeroesDataSourceTest.swift */; };
+		3146E773217BA044008F21E5 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E772217BA044008F21E5 /* APIRequest.swift */; };
 		3146E779217BA2BA008F21E5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E778217BA2BA008F21E5 /* Image.swift */; };
 		3146E780217BA64B008F21E5 /* ResponseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E77F217BA64B008F21E5 /* ResponseContainer.swift */; };
 		3146E786217BA70C008F21E5 /* HTTPParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E785217BA70C008F21E5 /* HTTPParameter.swift */; };
@@ -64,6 +65,7 @@
 		3146E768217B81DB008F21E5 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		3146E76A217B86F1008F21E5 /* HeroesPopulationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesPopulationTest.swift; sourceTree = "<group>"; };
 		3146E76C217B9887008F21E5 /* HeroesDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesDataSourceTest.swift; sourceTree = "<group>"; };
+		3146E772217BA044008F21E5 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		3146E778217BA2BA008F21E5 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		3146E77F217BA64B008F21E5 /* ResponseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseContainer.swift; sourceTree = "<group>"; };
 		3146E785217BA70C008F21E5 /* HTTPParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPParameter.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+				3146E772217BA044008F21E5 /* APIRequest.swift */,
 		3146E77A217BA50A008F21E5 /* Util */ = {
 			isa = PBXGroup;
 			children = (
