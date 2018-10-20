@@ -10,7 +10,14 @@ import UIKit
 
 class HeroCell: UICollectionViewCell {
     
-    func setup(){
-        
+    @IBOutlet weak var heroImageView: UIImageView!
+    
+    var heroName: String = ""
+    
+    func setup(_ name: String){
+        if let image = UIImage(named: "marvel_logo"){
+            heroImageView.image = image
+        }
+        self.heroName = name
     }
 }

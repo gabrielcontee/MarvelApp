@@ -98,13 +98,27 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="heroCell" id="nh7-oz-bgj">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="heroCell" id="nh7-oz-bgj" customClass="HeroCell" customModule="MarvelApp" customModuleProvider="target">
                                         <rect key="frame" x="51.5" y="0.0" width="240" height="129"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="129"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SaJ-6L-sfc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="129"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="SaJ-6L-sfc" firstAttribute="top" secondItem="nh7-oz-bgj" secondAttribute="top" id="VTy-EV-pmV"/>
+                                            <constraint firstAttribute="bottom" secondItem="SaJ-6L-sfc" secondAttribute="bottom" id="Xrm-sL-1ZE"/>
+                                            <constraint firstItem="SaJ-6L-sfc" firstAttribute="leading" secondItem="nh7-oz-bgj" secondAttribute="leading" id="rIb-Ju-ZY0"/>
+                                            <constraint firstAttribute="trailing" secondItem="SaJ-6L-sfc" secondAttribute="trailing" id="rVL-eS-V6P"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="heroImageView" destination="SaJ-6L-sfc" id="6mM-wg-awN"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

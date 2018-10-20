@@ -13,6 +13,13 @@ class HeroesViewController: UIViewController {
     @IBOutlet weak var heroesCollectionView: UICollectionView!
     
     private lazy var viewModel = HeroesViewModel()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        heroesCollectionView.delegate = self
+        heroesCollectionView.dataSource = self
+    }
 }
 
 extension HeroesViewController: UICollectionViewDataSource{
@@ -21,7 +28,12 @@ extension HeroesViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return viewModel.hero(for: indexPath)
+        
+        let heroCell = heroesCollectionView.dequeueReusableCell(withReuseIdentifier: "heroCell", for: indexPath) as! HeroCell
+        let data = viewModel.hero(for: indexPath)
+        heroCell.setup(data)
+        
+        return heroCell
     }
     
     

@@ -16,7 +16,8 @@ class HeroesViewModel: NSObject{
         return dataSource.getHeroes().count
     }
     
-    func hero(for indexPath: IndexPath) -> HeroCell{
-        return HeroCell()
+    func hero(for indexPath: IndexPath) -> String{
+        return "john doe"
     }
+    
 }
