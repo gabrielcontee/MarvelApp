@@ -12,7 +12,7 @@ class HeroesDataSource: NSObject{
     
     private lazy var apiClient = ClientAPI(publicKey: MarvelAPIKeys.publicKey.rawValue, privateKey: MarvelAPIKeys.privateKey.rawValue)
     
-    lazy var heroes: [Hero] = []
+    lazy var heroes: [Hero?] = []
     
     func fetchHeroes(completion: @escaping ()->()){
         apiClient.send(GetHeroes()) { (result) in
@@ -27,10 +27,5 @@ class HeroesDataSource: NSObject{
             }
         }
     }
-    
-    func numberOfHeroes() -> Int {
-        return heroes.count
-    }
-    
-    
+
 }

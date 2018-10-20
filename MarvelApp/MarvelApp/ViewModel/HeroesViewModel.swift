@@ -12,20 +12,20 @@ class HeroesViewModel: NSObject{
     
     private lazy var dataSource = HeroesDataSource()
     
-    private var heroes: [Hero] { return dataSource.heroes }
+    private var heroes: [Hero?] { return dataSource.heroes }
     
     func numberOfHeroes() -> Int{
-        return dataSource.numberOfHeroes()
+        return heroes.count
     }
     
-    func hero(for indexPath: IndexPath) -> String{
-        if dataSource.heroes.count < indexPath.row{
-            return ""
+    func hero(for index: Int) -> Hero?{
+        if heroes.count <= index{
+            return nil
         }else{
-            guard let name = dataSource.heroes[indexPath.row].name else{
-                return ""
+            guard let hero = heroes[index] else{
+                return nil
             }
-            return name
+            return hero
         }
     }
     

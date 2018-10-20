@@ -20,6 +20,10 @@ class HeroesViewController: UIViewController {
         heroesCollectionView.delegate = self
         heroesCollectionView.dataSource = self
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        viewModel.fetchAllHeroes()
+    }
 }
 
 extension HeroesViewController: UICollectionViewDataSource{
@@ -30,8 +34,8 @@ extension HeroesViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let heroCell = heroesCollectionView.dequeueReusableCell(withReuseIdentifier: "heroCell", for: indexPath) as! HeroCell
-        let data = viewModel.hero(for: indexPath)
-        heroCell.setup(data)
+        let data = viewModel.hero(for: indexPath.row)
+        heroCell.setup(data?.name ?? "")
         
         return heroCell
     }

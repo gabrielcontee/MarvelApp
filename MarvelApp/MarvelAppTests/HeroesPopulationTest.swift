@@ -28,12 +28,23 @@ class HeroesPopulationTest: XCTestCase {
     }
     
     
-    func testNumberOfHeroes() {
-        
-    }
-    
     func testHeroForIndex() {
+        let expectation = self.expectation(description: "heroesForIndex")
+        dataSource.fetchHeroes {
+            expectation.fulfill()
+        }
         
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertNotEqual(viewModel.hero(for: 0)?.name, "")
+        XCTAssertNotNil(viewModel.hero(for: 0))
+        XCTAssertNotNil(viewModel.hero(for: 0)?.id)
+        XCTAssertNotNil(viewModel.hero(for: 0)?.name)
+        XCTAssertNotNil(viewModel.hero(for: 0)?.thumbnail)
+        XCTAssertNotNil(viewModel.hero(for: 1))
+        XCTAssertNotNil(viewModel.hero(for: 1)?.id)
+        XCTAssertNotNil(viewModel.hero(for: 1)?.name)
+        XCTAssertNotNil(viewModel.hero(for: 1)?.thumbnail)
+        XCTAssertNotEqual(viewModel.hero(for: 0)?.id, viewModel.hero(for: 1)?.id)
     }
     
     func testPerformanceExample() {

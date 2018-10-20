@@ -226,8 +226,7 @@
 				3146E76F217B9A9C008F21E5 /* Service */,
 				3146E767217B81D0008F21E5 /* Entity */,
 				3146E764217B80EF008F21E5 /* Source */,
-				3146E778217BA2BA008F21E5 /* Image.swift */,
-				3146E77F217BA64B008F21E5 /* ResponseContainer.swift */,
+				31F8223C217BD60E000C50DF /* Auxiliar */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,6 +268,15 @@
 				31F8223A217BCA08000C50DF /* Keys.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		31F8223C217BD60E000C50DF /* Auxiliar */ = {
+			isa = PBXGroup;
+			children = (
+				3146E778217BA2BA008F21E5 /* Image.swift */,
+				3146E77F217BA64B008F21E5 /* ResponseContainer.swift */,
+			);
+			path = Auxiliar;
 			sourceTree = "<group>";
 		};
 		86DBBF854D422D78342C5D7F /* Pods */ = {

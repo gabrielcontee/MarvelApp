@@ -33,8 +33,8 @@ class HeroesDataSourceTest: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertNotEqual(dataSource.heroes.count, 0)
         XCTAssertNotNil(dataSource.heroes)
-        XCTAssertNotEqual(dataSource.heroes.first?.name, "")
-        XCTAssertNotNil(dataSource.heroes.first?.name)
+        XCTAssertNotEqual(dataSource.heroes[0]!.name, "")
+        XCTAssertNotNil(dataSource.heroes.first!)
     }
     
     func testPerformanceExample() {
