@@ -16,6 +16,7 @@
 		3146E757217B7676008F21E5 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E756217B7676008F21E5 /* UIView.swift */; };
 		3146E759217B76D1008F21E5 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E758217B76D1008F21E5 /* IntroductionViewController.swift */; };
 		3146E75B217B7D11008F21E5 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E75A217B7D11008F21E5 /* HeroesViewController.swift */; };
+		3146E75E217B7E10008F21E5 /* HeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E75D217B7E10008F21E5 /* HeroesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		3146E756217B7676008F21E5 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		3146E758217B76D1008F21E5 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		3146E75A217B7D11008F21E5 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
+		3146E75D217B7E10008F21E5 /* HeroesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				3146E72E217B6E00008F21E5 /* Info.plist */,
 				3146E751217B6FC4008F21E5 /* SupportingFiles */,
 				3146E750217B6FB6008F21E5 /* View */,
+				3146E75C217B7DEF008F21E5 /* ViewModel */,
 			);
 			path = MarvelApp;
 			sourceTree = "<group>";
@@ -153,6 +156,14 @@
 				3146E756217B7676008F21E5 /* UIView.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		3146E75C217B7DEF008F21E5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3146E75D217B7E10008F21E5 /* HeroesViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3146E75E217B7E10008F21E5 /* HeroesViewModel.swift in Sources */,
 				3146E757217B7676008F21E5 /* UIView.swift in Sources */,
 				3146E759217B76D1008F21E5 /* IntroductionViewController.swift in Sources */,
 				3146E75B217B7D11008F21E5 /* HeroesViewController.swift in Sources */,

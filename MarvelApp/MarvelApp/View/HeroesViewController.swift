@@ -12,6 +12,7 @@ class HeroesViewController: UIViewController {
     
     @IBOutlet weak var heroesCollectionView: UICollectionView!
     
+    private lazy var viewModel = HeroesViewModel()
 }
 
 extension HeroesViewController: UICollectionViewDataSource{
