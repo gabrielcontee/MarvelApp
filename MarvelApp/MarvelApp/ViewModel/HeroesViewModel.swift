@@ -12,6 +12,8 @@ class HeroesViewModel: NSObject{
     
     private lazy var dataSource = HeroesDataSource()
     
+    private var heroes: [Hero] { return dataSource.heroes }
+    
     func numberOfHeroes() -> Int{
         return dataSource.numberOfHeroes()
     }
@@ -30,6 +32,8 @@ class HeroesViewModel: NSObject{
     func fetchAllHeroes(){
         dataSource.fetchHeroes {
             print("Finished fetching heroes!")
+            // call collection reload data here
+            print(self.heroes)
         }
     }
     

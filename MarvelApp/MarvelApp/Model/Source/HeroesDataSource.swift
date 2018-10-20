@@ -18,11 +18,11 @@ class HeroesDataSource: NSObject{
         apiClient.send(GetHeroes()) { (result) in
             switch result{
             case .success(let characters):
-                print(characters)
                 self.heroes = characters.results
                 completion()
             case .failure(let error):
                 print(error)
+                // Call alert with error here
                 completion()
             }
         }
