@@ -21,6 +21,7 @@
 		3146E769217B81DB008F21E5 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E768217B81DB008F21E5 /* Hero.swift */; };
 		3146E76B217B86F1008F21E5 /* HeroesPopulationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E76A217B86F1008F21E5 /* HeroesPopulationTest.swift */; };
 		3146E76D217B9887008F21E5 /* HeroesDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E76C217B9887008F21E5 /* HeroesDataSourceTest.swift */; };
+		3146E779217BA2BA008F21E5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E778217BA2BA008F21E5 /* Image.swift */; };
 		3146E780217BA64B008F21E5 /* ResponseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E77F217BA64B008F21E5 /* ResponseContainer.swift */; };
 		3146E786217BA70C008F21E5 /* HTTPParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E785217BA70C008F21E5 /* HTTPParameter.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		3146E768217B81DB008F21E5 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		3146E76A217B86F1008F21E5 /* HeroesPopulationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesPopulationTest.swift; sourceTree = "<group>"; };
 		3146E76C217B9887008F21E5 /* HeroesDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesDataSourceTest.swift; sourceTree = "<group>"; };
+		3146E778217BA2BA008F21E5 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		3146E77F217BA64B008F21E5 /* ResponseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseContainer.swift; sourceTree = "<group>"; };
 		3146E785217BA70C008F21E5 /* HTTPParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPParameter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +197,7 @@
 			children = (
 				3146E767217B81D0008F21E5 /* Entity */,
 				3146E764217B80EF008F21E5 /* Source */,
+				3146E778217BA2BA008F21E5 /* Image.swift */,
 				3146E77F217BA64B008F21E5 /* ResponseContainer.swift */,
 			);
 			path = Model;
@@ -360,6 +363,7 @@
 				3146E757217B7676008F21E5 /* UIView.swift in Sources */,
 				3146E769217B81DB008F21E5 /* Hero.swift in Sources */,
 				3146E759217B76D1008F21E5 /* IntroductionViewController.swift in Sources */,
+				3146E779217BA2BA008F21E5 /* Image.swift in Sources */,
 				3146E762217B7F57008F21E5 /* HeroCell.swift in Sources */,
 				3146E75B217B7D11008F21E5 /* HeroesViewController.swift in Sources */,
 				3146E780217BA64B008F21E5 /* ResponseContainer.swift in Sources */,
