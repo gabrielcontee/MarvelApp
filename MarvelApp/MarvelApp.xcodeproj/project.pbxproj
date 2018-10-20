@@ -22,6 +22,8 @@
 		3146E76B217B86F1008F21E5 /* HeroesPopulationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E76A217B86F1008F21E5 /* HeroesPopulationTest.swift */; };
 		3146E76D217B9887008F21E5 /* HeroesDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E76C217B9887008F21E5 /* HeroesDataSourceTest.swift */; };
 		3146E773217BA044008F21E5 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E772217BA044008F21E5 /* APIRequest.swift */; };
+		3146E775217BA11C008F21E5 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E774217BA11C008F21E5 /* APIResponse.swift */; };
+		3146E777217BA1F0008F21E5 /* GetHeroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E776217BA1F0008F21E5 /* GetHeroes.swift */; };
 		3146E779217BA2BA008F21E5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E778217BA2BA008F21E5 /* Image.swift */; };
 		3146E780217BA64B008F21E5 /* ResponseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E77F217BA64B008F21E5 /* ResponseContainer.swift */; };
 		3146E786217BA70C008F21E5 /* HTTPParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E785217BA70C008F21E5 /* HTTPParameter.swift */; };
@@ -66,6 +68,8 @@
 		3146E76A217B86F1008F21E5 /* HeroesPopulationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesPopulationTest.swift; sourceTree = "<group>"; };
 		3146E76C217B9887008F21E5 /* HeroesDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesDataSourceTest.swift; sourceTree = "<group>"; };
 		3146E772217BA044008F21E5 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		3146E774217BA11C008F21E5 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		3146E776217BA1F0008F21E5 /* GetHeroes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeroes.swift; sourceTree = "<group>"; };
 		3146E778217BA2BA008F21E5 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		3146E77F217BA64B008F21E5 /* ResponseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseContainer.swift; sourceTree = "<group>"; };
 		3146E785217BA70C008F21E5 /* HTTPParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPParameter.swift; sourceTree = "<group>"; };
@@ -221,7 +225,16 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		3146E76F217B9A9C008F21E5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
 				3146E772217BA044008F21E5 /* APIRequest.swift */,
+				3146E774217BA11C008F21E5 /* APIResponse.swift */,
+				3146E776217BA1F0008F21E5 /* GetHeroes.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		3146E77A217BA50A008F21E5 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,16 +374,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3146E777217BA1F0008F21E5 /* GetHeroes.swift in Sources */,
 				3146E766217B8100008F21E5 /* HeroesDataSource.swift in Sources */,
 				3146E75E217B7E10008F21E5 /* HeroesViewModel.swift in Sources */,
 				3146E757217B7676008F21E5 /* UIView.swift in Sources */,
 				3146E769217B81DB008F21E5 /* Hero.swift in Sources */,
 				3146E759217B76D1008F21E5 /* IntroductionViewController.swift in Sources */,
 				3146E779217BA2BA008F21E5 /* Image.swift in Sources */,
+				3146E775217BA11C008F21E5 /* APIResponse.swift in Sources */,
 				3146E762217B7F57008F21E5 /* HeroCell.swift in Sources */,
 				3146E75B217B7D11008F21E5 /* HeroesViewController.swift in Sources */,
 				3146E780217BA64B008F21E5 /* ResponseContainer.swift in Sources */,
 				3146E786217BA70C008F21E5 /* HTTPParameter.swift in Sources */,
+				3146E773217BA044008F21E5 /* APIRequest.swift in Sources */,
 				3146E723217B6DFE008F21E5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
