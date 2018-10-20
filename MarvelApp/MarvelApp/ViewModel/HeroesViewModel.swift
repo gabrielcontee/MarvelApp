@@ -10,5 +10,11 @@ import Foundation
 
 class HeroesViewModel: NSObject{
     
+    func numberOfHeroes() -> Int{
+        return 0
+    }
     
+    func hero(for indexPath: IndexPath) -> HeroCell{
+        return HeroCell()
+    }
 }

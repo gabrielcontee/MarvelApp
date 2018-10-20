@@ -17,11 +17,11 @@ class HeroesViewController: UIViewController {
 
 extension HeroesViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return viewModel.numberOfHeroes()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        return viewModel.hero(for: indexPath)
     }
     
     
