@@ -8,10 +8,10 @@
 
 import Foundation
 
-public struct Hero: Decodable{
+struct Hero: Decodable{
     
     let id: Int
     let name: String?
     let description: String?
-    let imagePath: String?
+    let thumbnail: Image?
 }
