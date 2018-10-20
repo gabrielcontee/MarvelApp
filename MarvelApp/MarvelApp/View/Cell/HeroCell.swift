@@ -14,10 +14,15 @@ class HeroCell: UICollectionViewCell {
     
     var heroName: String = ""
     
-    func setup(_ name: String){
-        if let image = UIImage(named: "marvel_logo"){
-            heroImageView.image = image
+    func setup(_ name: String?, imageURL: Image?){
+        
+        guard let heroName = name, let image = imageURL else{
+            heroImageView.image = UIImage(named: "marvel_logo")
+            return
         }
-        self.heroName = name
+        
+        heroImageView.downloadImage(imageURL: image.url.absoluteString)
+        
+        self.heroName = heroName
     }
 }
