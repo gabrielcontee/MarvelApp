@@ -10,11 +10,22 @@ import Foundation
 
 class HeroesDataSource: NSObject{
     
-    private lazy var heroes: [Hero] = []
+    private lazy var apiClient = ClientAPI(publicKey: MarvelAPIKeys.publicKey.rawValue, privateKey: MarvelAPIKeys.privateKey.rawValue)
     
-    func fetchHeroes(completion: @escaping ()->()) -> [Hero]{
-        completion()
-        return heroes
+    lazy var heroes: [Hero] = []
+    
+    func fetchHeroes(completion: @escaping ()->()){
+        apiClient.send(GetHeroes()) { (result) in
+            switch result{
+            case .success(let characters):
+                print(characters)
+                self.heroes = characters.results
+                completion()
+            case .failure(let error):
+                print(error)
+                completion()
+            }
+        }
     }
     
     func numberOfHeroes() -> Int {

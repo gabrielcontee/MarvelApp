@@ -17,7 +17,20 @@ class HeroesViewModel: NSObject{
     }
     
     func hero(for indexPath: IndexPath) -> String{
-        return "john doe"
+        if dataSource.heroes.count < indexPath.row{
+            return ""
+        }else{
+            guard let name = dataSource.heroes[indexPath.row].name else{
+                return ""
+            }
+            return name
+        }
+    }
+    
+    func fetchAllHeroes(){
+        dataSource.fetchHeroes {
+            print("Finished fetching heroes!")
+        }
     }
     
 }
