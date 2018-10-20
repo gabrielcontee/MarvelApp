@@ -18,6 +18,8 @@
 		3146E75B217B7D11008F21E5 /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E75A217B7D11008F21E5 /* HeroesViewController.swift */; };
 		3146E75E217B7E10008F21E5 /* HeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E75D217B7E10008F21E5 /* HeroesViewModel.swift */; };
 		3146E762217B7F57008F21E5 /* HeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E761217B7F57008F21E5 /* HeroCell.swift */; };
+		3146E766217B8100008F21E5 /* HeroesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E765217B8100008F21E5 /* HeroesDataSource.swift */; };
+		3146E769217B81DB008F21E5 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E768217B81DB008F21E5 /* Hero.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		3146E75A217B7D11008F21E5 /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
 		3146E75D217B7E10008F21E5 /* HeroesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModel.swift; sourceTree = "<group>"; };
 		3146E761217B7F57008F21E5 /* HeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCell.swift; sourceTree = "<group>"; };
+		3146E765217B8100008F21E5 /* HeroesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesDataSource.swift; sourceTree = "<group>"; };
+		3146E768217B81DB008F21E5 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 				3146E751217B6FC4008F21E5 /* SupportingFiles */,
 				3146E750217B6FB6008F21E5 /* View */,
 				3146E75C217B7DEF008F21E5 /* ViewModel */,
+				3146E763217B80D5008F21E5 /* Model */,
 			);
 			path = MarvelApp;
 			sourceTree = "<group>";
@@ -175,6 +180,31 @@
 				3146E761217B7F57008F21E5 /* HeroCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		3146E763217B80D5008F21E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3146E767217B81D0008F21E5 /* Entity */,
+				3146E764217B80EF008F21E5 /* Source */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3146E764217B80EF008F21E5 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3146E765217B8100008F21E5 /* HeroesDataSource.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		3146E767217B81D0008F21E5 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3146E768217B81DB008F21E5 /* Hero.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,8 +338,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3146E766217B8100008F21E5 /* HeroesDataSource.swift in Sources */,
 				3146E75E217B7E10008F21E5 /* HeroesViewModel.swift in Sources */,
 				3146E757217B7676008F21E5 /* UIView.swift in Sources */,
+				3146E769217B81DB008F21E5 /* Hero.swift in Sources */,
 				3146E759217B76D1008F21E5 /* IntroductionViewController.swift in Sources */,
 				3146E762217B7F57008F21E5 /* HeroCell.swift in Sources */,
 				3146E75B217B7D11008F21E5 /* HeroesViewController.swift in Sources */,

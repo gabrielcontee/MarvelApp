@@ -10,8 +10,10 @@ import Foundation
 
 class HeroesViewModel: NSObject{
     
+    private lazy var dataSource = HeroesDataSource()
+    
     func numberOfHeroes() -> Int{
-        return 0
+        return dataSource.getHeroes().count
     }
     
     func hero(for indexPath: IndexPath) -> HeroCell{
