@@ -12,28 +12,26 @@ class HeroesViewModel: NSObject{
     
     private lazy var dataSource = HeroesDataSource()
     
-    private var heroes: [Hero?] { return dataSource.heroes }
+    var heroes: [Hero?] = []
     
     func numberOfHeroes() -> Int{
         return heroes.count
     }
     
     func hero(for index: Int) -> Hero?{
-        if heroes.count <= index{
+        guard heroes.isEmpty == false else {
             return nil
-        }else{
-            guard let hero = heroes[index] else{
-                return nil
-            }
-            return hero
         }
+        return heroes[index]
     }
     
-    func fetchAllHeroes(){
+    func fetchAllHeroes(completion:(()->())? = nil){
         dataSource.fetchHeroes {
             print("Finished fetching heroes!")
             // call collection reload data here
+            self.heroes = self.dataSource.heroes
             print(self.heroes)
+            completion?()
         }
     }
     

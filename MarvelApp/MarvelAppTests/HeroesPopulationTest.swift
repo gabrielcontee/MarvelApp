@@ -13,28 +13,26 @@ import XCTest
 class HeroesPopulationTest: XCTestCase {
     
     var viewModel: HeroesViewModel!
-    var dataSource: HeroesDataSource!
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         viewModel = HeroesViewModel()
-        dataSource = HeroesDataSource()
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         viewModel = nil
-        dataSource = nil
     }
     
     
     func testHeroForIndex() {
         let expectation = self.expectation(description: "heroesForIndex")
-        dataSource.fetchHeroes {
+    
+        viewModel.fetchAllHeroes {
             expectation.fulfill()
         }
         
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: 8, handler: nil)
         XCTAssertNotEqual(viewModel.hero(for: 0)?.name, "")
         XCTAssertNotNil(viewModel.hero(for: 0))
         XCTAssertNotNil(viewModel.hero(for: 0)?.id)
