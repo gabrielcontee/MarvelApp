@@ -17,5 +17,9 @@ class HeroesDataSource: NSObject{
         return heroes
     }
     
+    func numberOfHeroes() -> Int {
+        return heroes.count
+    }
+    
     
 }
