@@ -12,7 +12,10 @@ class HeroesDataSource: NSObject{
     
     private lazy var heroes: [Hero] = []
     
-    func getHeroes() -> [Hero]{
+    func fetchHeroes(completion: @escaping ()->()) -> [Hero]{
+        completion()
         return heroes
     }
+    
+    
 }

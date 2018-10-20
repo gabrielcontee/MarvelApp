@@ -13,7 +13,7 @@ class HeroesViewModel: NSObject{
     private lazy var dataSource = HeroesDataSource()
     
     func numberOfHeroes() -> Int{
-        return dataSource.getHeroes().count
+        return dataSource.fetchHeroes().count
     }
     
     func hero(for indexPath: IndexPath) -> String{
