@@ -20,6 +20,19 @@ class HeroesViewController: UIViewController {
         heroesCollectionView.dataSource = self
         viewModel.delegate = self
         viewModel.fetchAllHeroes()
+        
+        
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if let layout =  self.heroesCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout{
+            if layout.scrollDirection == .horizontal {
+                layout.scrollDirection = .vertical
+            }else{
+                layout.scrollDirection = .horizontal
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
