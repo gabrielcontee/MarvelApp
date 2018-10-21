@@ -214,6 +214,7 @@
                         <outlet property="heroDescriptionLabel" destination="JBi-sc-6t3" id="jAz-bu-raJ"/>
                         <outlet property="heroImageView" destination="PDx-zJ-mld" id="JQR-Fc-cq5"/>
                         <outlet property="imageBackView" destination="RX0-md-ZEl" id="0MB-Tz-MZI"/>
+                        <outlet property="stackView" destination="YSX-V3-4Pm" id="Wkc-Vo-XS8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IEq-xR-eHw" userLabel="First Responder" sceneMemberID="firstResponder"/>

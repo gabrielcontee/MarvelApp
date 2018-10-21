@@ -10,6 +10,8 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
+    
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var imageBackView: UIView!
     @IBOutlet weak var heroImageView: UIImageView!
     @IBOutlet weak var heroDescriptionLabel: UILabel!
@@ -26,4 +28,14 @@ class DetailsViewController: UIViewController {
         heroDescriptionLabel.text = "About: \(heroDescription)"
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if self.stackView.axis == .horizontal{
+            self.stackView.axis = .vertical
+        }else{
+            self.stackView.axis = .horizontal
+        }
+    }
+    
 }
+
