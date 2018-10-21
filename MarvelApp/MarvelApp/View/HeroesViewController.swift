@@ -19,6 +19,7 @@ class HeroesViewController: UIViewController {
         
         heroesCollectionView.delegate = self
         heroesCollectionView.dataSource = self
+        viewModel.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,7 +36,7 @@ extension HeroesViewController: UICollectionViewDataSource{
         
         let heroCell = heroesCollectionView.dequeueReusableCell(withReuseIdentifier: "heroCell", for: indexPath) as! HeroCell
         let data = viewModel.hero(for: indexPath.row)
-        heroCell.setup(data?.name ?? "")
+        heroCell.setup(data?.name, imageURL: data?.thumbnail)
         
         return heroCell
     }
@@ -46,4 +47,13 @@ extension HeroesViewController: UICollectionViewDataSource{
 extension HeroesViewController: UICollectionViewDelegate{
     
     
+}
+
+extension HeroesViewController: HeroesFetchDelegate{
+    
+    func loadData() {
+        DispatchQueue.main.async {
+            self.heroesCollectionView.reloadData()
+        }
+    }
 }

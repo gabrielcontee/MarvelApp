@@ -8,10 +8,15 @@
 
 import Foundation
 
+protocol HeroesFetchDelegate {
+    func loadData()
+}
+
 class HeroesViewModel: NSObject{
     
     private lazy var dataSource = HeroesDataSource()
     
+    var delegate: HeroesFetchDelegate?
     var heroes: [Hero?] = []
     
     func numberOfHeroes() -> Int{
@@ -28,8 +33,8 @@ class HeroesViewModel: NSObject{
     func fetchAllHeroes(completion:(()->())? = nil){
         dataSource.fetchHeroes {
             print("Finished fetching heroes!")
-            // call collection reload data here
             self.heroes = self.dataSource.heroes
+            self.delegate?.loadData()
             print(self.heroes)
             completion?()
         }

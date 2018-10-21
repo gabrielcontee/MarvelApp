@@ -32,6 +32,7 @@
 		3146E784217BA6EE008F21E5 /* URLQueryItemEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E783217BA6EE008F21E5 /* URLQueryItemEncoder.swift */; };
 		3146E786217BA70C008F21E5 /* HTTPParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E785217BA70C008F21E5 /* HTTPParameter.swift */; };
 		31F8223B217BCA08000C50DF /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F8223A217BCA08000C50DF /* Keys.swift */; };
+		31F8223E217BE3FB000C50DF /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F8223D217BE3FB000C50DF /* ImageCacheManager.swift */; };
 		8611A1490519D72E66CBF30D /* Pods_MarvelAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D346F2FCA94728F9A3469DC5 /* Pods_MarvelAppTests.framework */; };
 		A3B872815DAF7B2AF9F365E7 /* Pods_MarvelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFE71B6EBB5FA31DA28583D3 /* Pods_MarvelApp.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +87,7 @@
 		3146E783217BA6EE008F21E5 /* URLQueryItemEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryItemEncoder.swift; sourceTree = "<group>"; };
 		3146E785217BA70C008F21E5 /* HTTPParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPParameter.swift; sourceTree = "<group>"; };
 		31F8223A217BCA08000C50DF /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		31F8223D217BE3FB000C50DF /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		689F0D5A19C121A896DD71EC /* Pods-MarvelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelApp/Pods-MarvelApp.release.xcconfig"; sourceTree = "<group>"; };
 		842E4754D47809D1A9B8F62E /* Pods-MarvelAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0530D8C6C004B52E05FB91C /* Pods-MarvelAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				3146E772217BA044008F21E5 /* APIRequest.swift */,
 				3146E774217BA11C008F21E5 /* APIResponse.swift */,
 				3146E776217BA1F0008F21E5 /* GetHeroes.swift */,
+				31F8223D217BE3FB000C50DF /* ImageCacheManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -461,12 +464,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MarvelApp/Pods-MarvelApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,12 +490,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,6 +548,7 @@
 				3146E775217BA11C008F21E5 /* APIResponse.swift in Sources */,
 				3146E762217B7F57008F21E5 /* HeroCell.swift in Sources */,
 				3146E75B217B7D11008F21E5 /* HeroesViewController.swift in Sources */,
+				31F8223E217BE3FB000C50DF /* ImageCacheManager.swift in Sources */,
 				3146E780217BA64B008F21E5 /* ResponseContainer.swift in Sources */,
 				3146E771217B9D5C008F21E5 /* ClientAPI.swift in Sources */,
 				3146E786217BA70C008F21E5 /* HTTPParameter.swift in Sources */,

@@ -5,10 +5,12 @@ use_frameworks!
 
 target 'MarvelApp' do
     pod 'CryptoSwift'
+    pod 'AlamofireImage', '~> 3.4'
 end
 
 target 'MarvelAppTests' do
     pod 'CryptoSwift'
+    pod 'AlamofireImage', '~> 3.4'
 end
 
 
