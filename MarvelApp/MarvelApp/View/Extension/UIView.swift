@@ -20,6 +20,27 @@ extension UIView{
             layer.masksToBounds = newValue > 0
         }
     }
+    
+    @IBInspectable
+    var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    
+    @IBInspectable
+    var borderColor: UIColor? {
+        get {
+            guard let cg = layer.borderColor else { return nil}
+            return UIColor(cgColor: cg)
+        }
+        set {
+            layer.borderColor = newValue?.cgColor
+        }
+    }
 }
 
 extension UIView {

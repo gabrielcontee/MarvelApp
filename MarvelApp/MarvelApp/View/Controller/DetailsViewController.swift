@@ -10,9 +10,13 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
+    
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var imageBackView: UIView!
     @IBOutlet weak var heroImageView: UIImageView!
     @IBOutlet weak var heroDescriptionLabel: UILabel!
+    
+    private lazy var viewModel = HeroesDetailsViewModel()
     
     lazy var heroName: String = ""
     lazy var heroImage: UIImage = UIImage()
@@ -23,7 +27,18 @@ class DetailsViewController: UIViewController {
         self.title = heroName
         heroImageView.image = heroImage
         imageBackView.layer.cornerRadius = self.imageBackView.layer.bounds.height / 8
-        heroDescriptionLabel.text = "About: \(heroDescription)"
+        heroDescriptionLabel.text = viewModel.fillDescriptionLabel(with: heroDescription)
+        
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if self.stackView.axis == .horizontal{
+            self.stackView.axis = .vertical
+        }else{
+            self.stackView.axis = .horizontal
+        }
     }
     
 }
+
