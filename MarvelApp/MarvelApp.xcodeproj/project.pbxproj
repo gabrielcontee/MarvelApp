@@ -34,6 +34,7 @@
 		31F8223B217BCA08000C50DF /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F8223A217BCA08000C50DF /* Keys.swift */; };
 		31F8223E217BE3FB000C50DF /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F8223D217BE3FB000C50DF /* ImageCacheManager.swift */; };
 		31F82242217C37AB000C50DF /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F82241217C37AB000C50DF /* DetailsViewController.swift */; };
+		31F82244217C4B1B000C50DF /* ImageCacheManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F82243217C4B1B000C50DF /* ImageCacheManagerTest.swift */; };
 		8611A1490519D72E66CBF30D /* Pods_MarvelAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D346F2FCA94728F9A3469DC5 /* Pods_MarvelAppTests.framework */; };
 		A3B872815DAF7B2AF9F365E7 /* Pods_MarvelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFE71B6EBB5FA31DA28583D3 /* Pods_MarvelApp.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		31F8223A217BCA08000C50DF /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		31F8223D217BE3FB000C50DF /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		31F82241217C37AB000C50DF /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		31F82243217C4B1B000C50DF /* ImageCacheManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManagerTest.swift; sourceTree = "<group>"; };
 		689F0D5A19C121A896DD71EC /* Pods-MarvelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelApp/Pods-MarvelApp.release.xcconfig"; sourceTree = "<group>"; };
 		842E4754D47809D1A9B8F62E /* Pods-MarvelAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0530D8C6C004B52E05FB91C /* Pods-MarvelAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				3146E739217B6E00008F21E5 /* Info.plist */,
 				3146E76A217B86F1008F21E5 /* HeroesPopulationTest.swift */,
 				3146E76C217B9887008F21E5 /* HeroesDataSourceTest.swift */,
+				31F82243217C4B1B000C50DF /* ImageCacheManagerTest.swift */,
 			);
 			path = MarvelAppTests;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3146E76D217B9887008F21E5 /* HeroesDataSourceTest.swift in Sources */,
+				31F82244217C4B1B000C50DF /* ImageCacheManagerTest.swift in Sources */,
 				3146E76B217B86F1008F21E5 /* HeroesPopulationTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
