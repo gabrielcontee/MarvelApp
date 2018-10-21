@@ -16,6 +16,8 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var heroImageView: UIImageView!
     @IBOutlet weak var heroDescriptionLabel: UILabel!
     
+    private lazy var viewModel = HeroesDetailsViewModel()
+    
     lazy var heroName: String = ""
     lazy var heroImage: UIImage = UIImage()
     lazy var heroDescription: String = ""
@@ -25,7 +27,7 @@ class DetailsViewController: UIViewController {
         self.title = heroName
         heroImageView.image = heroImage
         imageBackView.layer.cornerRadius = self.imageBackView.layer.bounds.height / 8
-        fillDescriptionLabel()
+        heroDescriptionLabel.text = viewModel.fillDescriptionLabel(with: heroDescription)
         
     }
     
@@ -35,14 +37,6 @@ class DetailsViewController: UIViewController {
             self.stackView.axis = .vertical
         }else{
             self.stackView.axis = .horizontal
-        }
-    }
-    
-    func fillDescriptionLabel(){
-        if heroDescription != ""{
-            heroDescriptionLabel.text = "About: \(heroDescription)"
-        }else{
-            heroDescriptionLabel.text = "There is not an available description for this character until now :("
         }
     }
     
