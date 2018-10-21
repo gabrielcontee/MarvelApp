@@ -10,7 +10,7 @@ import Foundation
 
 class HeroesDataSource: NSObject{
     
-    private lazy var apiClient = ClientAPI(publicKey: MarvelAPIKeys.publicKey.rawValue, privateKey: MarvelAPIKeys.privateKey.rawValue)
+    private lazy var apiClient = ClientAPI()
     
     lazy var heroes: [Hero?] = []
     

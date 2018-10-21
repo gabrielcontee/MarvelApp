@@ -17,13 +17,8 @@ class ClientAPI {
     private let baseEndpointUrl = URL(string: "https://gateway.marvel.com:443/v1/public/")!
     private let session = URLSession(configuration: .default)
     
-    private let publicKey: String
-    private let privateKey: String
-    
-    init(publicKey: String, privateKey: String) {
-        self.publicKey = publicKey
-        self.privateKey = privateKey
-    }
+    private let publicKey: String = MarvelAPIKeys.publicKey.rawValue
+    private let privateKey: String = MarvelAPIKeys.privateKey.rawValue
     
     /// Sends a request to Marvel servers, calling the completion method when finished
     func send<T: APIRequest>(_ request: T, completion: @escaping ResultCallback<ResponseContainer<T.Response>>) {
@@ -83,7 +78,6 @@ class ClientAPI {
         
         components.queryItems = commonQueryItems + customQueryItems
         
-        // Construct the final URL with all the previous data
         return components.url!
     }
 }

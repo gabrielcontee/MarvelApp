@@ -16,14 +16,24 @@ class HeroesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         heroesCollectionView.delegate = self
         heroesCollectionView.dataSource = self
         viewModel.delegate = self
+        viewModel.fetchAllHeroes()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        viewModel.fetchAllHeroes()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showCharacterDetails") {
+            let detailsController: DetailsViewController = segue.destination as! DetailsViewController
+            if let selectedIndexPath = heroesCollectionView.indexPathsForSelectedItems?.first{
+                let data = viewModel.hero(for: selectedIndexPath.row)
+                let cell = collectionView(heroesCollectionView, cellForItemAt: selectedIndexPath) as! HeroCell
+                detailsController.heroName = data?.name ?? ""
+                detailsController.heroImage = cell.heroImageView.image ?? UIImage(named: "marvel_logo")!
+                detailsController.heroDescription = data?.description ?? ""
+            }
+            
+        }
     }
 }
 
@@ -36,7 +46,7 @@ extension HeroesViewController: UICollectionViewDataSource{
         
         let heroCell = heroesCollectionView.dequeueReusableCell(withReuseIdentifier: "heroCell", for: indexPath) as! HeroCell
         let data = viewModel.hero(for: indexPath.row)
-        heroCell.setup(data?.name, imageURL: data?.thumbnail)
+        heroCell.setup(imageURL: data?.thumbnail)
         
         return heroCell
     }
@@ -46,7 +56,9 @@ extension HeroesViewController: UICollectionViewDataSource{
 
 extension HeroesViewController: UICollectionViewDelegate{
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showCharacterDetails", sender: self)
+    }
 }
 
 extension HeroesViewController: HeroesFetchDelegate{

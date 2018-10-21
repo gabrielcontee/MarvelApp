@@ -13,7 +13,7 @@ class ImageCacheManager: NSObject {
     
     static var shared = ImageCacheManager()
     private lazy var imageCache = AutoPurgingImageCache()
-    private let placeholderImage = UIImage(named: "marvel_logo")
+    private let placeholderImage = UIImage()
     
     /// Downloads image given an url
     func downloadHeroImage(imageId: String?, imageView: UIImageView){
@@ -46,8 +46,6 @@ class ImageCacheManager: NSObject {
         }
         
     }
-    
-
     
 }
 
