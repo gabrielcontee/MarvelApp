@@ -14,16 +14,17 @@ class HeroesDataSource: NSObject{
     
     lazy var heroes: [Hero?] = []
     
-    func fetchHeroes(completion: @escaping ()->()){
+    func fetchHeroes(completion: @escaping (Error?)->()){
         apiClient.send(GetHeroes()) { (result) in
             switch result{
             case .success(let characters):
                 self.heroes = characters.results
-                completion()
+                completion(nil)
             case .failure(let error):
                 print(error)
                 // Call alert with error here
-                completion()
+                
+                completion(error)
             }
         }
     }

@@ -18,10 +18,10 @@ class HeroesViewController: UIViewController {
         super.viewDidLoad()
         heroesCollectionView.delegate = self
         heroesCollectionView.dataSource = self
-        viewModel.delegate = self
+        viewModel.fetchDelegate = self
+        viewModel.errorDelegate = self
+        
         viewModel.fetchAllHeroes()
-        
-        
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -80,5 +80,15 @@ extension HeroesViewController: HeroesFetchDelegate{
         DispatchQueue.main.async {
             self.heroesCollectionView.reloadData()
         }
+    }
+}
+
+extension HeroesViewController: ErrorAlertDelegate{
+    
+    func alertError(msg: String) {
+        let alert = UIAlertController.alertUser(msg) { (action) in
+            self.viewModel.fetchAllHeroes()
+        }
+        self.present(alert, animated: true, completion: nil)
     }
 }

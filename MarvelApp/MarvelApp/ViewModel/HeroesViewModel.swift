@@ -12,11 +12,16 @@ protocol HeroesFetchDelegate {
     func loadData()
 }
 
+protocol ErrorAlertDelegate {
+    func alertError(msg: String)
+}
+
 class HeroesViewModel: NSObject{
     
     private lazy var dataSource = HeroesDataSource()
     
-    var delegate: HeroesFetchDelegate?
+    var fetchDelegate: HeroesFetchDelegate?
+    var errorDelegate: ErrorAlertDelegate?
     var heroes: [Hero?] = []
     
     func numberOfHeroes() -> Int{
@@ -31,12 +36,16 @@ class HeroesViewModel: NSObject{
     }
     
     func fetchAllHeroes(completion:(()->())? = nil){
-        dataSource.fetchHeroes {
-            print("Finished fetching heroes!")
-            self.heroes = self.dataSource.heroes
-            self.delegate?.loadData()
-            print(self.heroes)
-            completion?()
+        dataSource.fetchHeroes { (error) in
+            if error == nil{
+                print("Finished fetching heroes!")
+                self.heroes = self.dataSource.heroes
+                self.fetchDelegate?.loadData()
+                print(self.heroes)
+                completion?()
+            }else{
+                self.errorDelegate?.alertError(msg: "Fetch failed, please try again")
+            }
         }
     }
     
