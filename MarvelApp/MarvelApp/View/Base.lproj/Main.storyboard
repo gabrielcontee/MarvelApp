@@ -166,10 +166,10 @@
             </objects>
             <point key="canvasLocation" x="1748" y="26.53673163418291"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="tXS-Si-QFb">
             <objects>
-                <viewController id="6jz-HI-bec" sceneMemberID="viewController">
+                <viewController id="6jz-HI-bec" customClass="DetailsViewController" customModule="MarvelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kta-Ft-1QG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

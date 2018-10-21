@@ -47,8 +47,6 @@ class ImageCacheManager: NSObject {
         
     }
     
-
-    
 }
 
 extension UIImageView{
