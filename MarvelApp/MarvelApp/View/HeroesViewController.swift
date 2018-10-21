@@ -24,6 +24,8 @@ class HeroesViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         viewModel.fetchAllHeroes()
+        
+        performSegue(withIdentifier: "showCharacterDetails", sender: nil)
     }
 }
 
