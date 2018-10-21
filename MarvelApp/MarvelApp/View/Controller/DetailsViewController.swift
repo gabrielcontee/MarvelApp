@@ -10,5 +10,20 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
+    @IBOutlet weak var imageBackView: UIView!
+    @IBOutlet weak var heroImageView: UIImageView!
+    @IBOutlet weak var heroDescriptionLabel: UILabel!
+    
+    lazy var heroName: String = ""
+    lazy var heroImage: UIImage = UIImage()
+    lazy var heroDescription: String = ""
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = heroName
+        heroImageView.image = heroImage
+        imageBackView.layer.cornerRadius = self.imageBackView.layer.bounds.height / 8
+        heroDescriptionLabel.text = "About: \(heroDescription)"
+    }
     
 }
