@@ -42,10 +42,9 @@ class ImageCacheManager: NSObject {
             // If the image is new, adds it in cache
             if let img = response.result.value{
                 self.imageCache.add(img, withIdentifier: heroImageString)
-            }else{
-    
             }
         }
+        
     }
     
 
