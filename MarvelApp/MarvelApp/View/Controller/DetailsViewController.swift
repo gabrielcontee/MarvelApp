@@ -25,7 +25,8 @@ class DetailsViewController: UIViewController {
         self.title = heroName
         heroImageView.image = heroImage
         imageBackView.layer.cornerRadius = self.imageBackView.layer.bounds.height / 8
-        heroDescriptionLabel.text = "About: \(heroDescription)"
+        fillDescriptionLabel()
+        
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -34,6 +35,14 @@ class DetailsViewController: UIViewController {
             self.stackView.axis = .vertical
         }else{
             self.stackView.axis = .horizontal
+        }
+    }
+    
+    func fillDescriptionLabel(){
+        if heroDescription != ""{
+            heroDescriptionLabel.text = "About: \(heroDescription)"
+        }else{
+            heroDescriptionLabel.text = "There is not an available description for this character until now :("
         }
     }
     
