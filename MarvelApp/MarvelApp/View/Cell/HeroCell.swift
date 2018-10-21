@@ -11,8 +11,7 @@ import UIKit
 class HeroCell: UICollectionViewCell {
     
     @IBOutlet weak var heroImageView: UIImageView!
-    
-    var heroName: String = ""
+    @IBOutlet weak var heroNameLabel: UILabel!
     
     func setup(_ name: String?, imageURL: Image?){
         
@@ -21,8 +20,7 @@ class HeroCell: UICollectionViewCell {
             return
         }
         
+        heroNameLabel.text = heroName
         heroImageView.downloadImage(imageURL: image.url.absoluteString)
-        
-        self.heroName = heroName
     }
 }
