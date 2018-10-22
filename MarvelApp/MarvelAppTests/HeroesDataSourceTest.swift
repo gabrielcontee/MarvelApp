@@ -39,7 +39,7 @@ class HeroesDataSourceTest: XCTestCase {
             expectation.fulfill()
         }
         
-        waitForExpectations(timeout: 15, handler: nil)
+        waitForExpectations(timeout: 20, handler: nil)
         
         if errorFound{
             fatalError("Could not fetch characters")

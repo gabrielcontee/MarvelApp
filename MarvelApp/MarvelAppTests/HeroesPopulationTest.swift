@@ -33,7 +33,7 @@ class HeroesPopulationTest: XCTestCase {
             expectation.fulfill()
         }
         
-        waitForExpectations(timeout: 15, handler: nil)
+        waitForExpectations(timeout: 20, handler: nil)
         XCTAssertNotEqual(viewModel.hero(for: 0)?.name, "")
         XCTAssertNotNil(viewModel.hero(for: 0))
         XCTAssertNotNil(viewModel.hero(for: 0)?.id)

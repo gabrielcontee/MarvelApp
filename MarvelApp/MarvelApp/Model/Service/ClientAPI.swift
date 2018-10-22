@@ -67,16 +67,7 @@ class ClientAPI {
             URLQueryItem(name: "apikey", value: publicKey)
         ]
         
-        // Custom query items needed for this specific request
-        let customQueryItems: [URLQueryItem]
-        
-        do {
-            customQueryItems = try URLQueryItemEncoder.encode(request)
-        } catch {
-            fatalError("Wrong parameters: \(error)")
-        }
-        
-        components.queryItems = commonQueryItems + customQueryItems
+        components.queryItems = commonQueryItems
         
         return components.url!
     }

@@ -38,7 +38,7 @@ class HeroesDataSource: NSObject{
     }
     
     func fetchComics(id: Int, completion: @escaping (Error?)->()){
-        apiClient.send(GetComic(heroId: id)) { (result) in
+        apiClient.send(GetComic(id: id)) { (result) in
             switch result{
             case .success(let comics):
                 self.comicsForHero[id] = comics.results

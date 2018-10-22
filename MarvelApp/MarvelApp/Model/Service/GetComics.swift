@@ -14,13 +14,13 @@ struct GetComic: APIRequest {
     
     // Notice how we create a composed resourceName
     var resourceName: String {
-        return "characters/\(heroId)/comics"
+        return "characters/\(id)/comics"
     }
     
     // Parameters
-    private let heroId: Int
+    private let id: Int
     
-    init(heroId: Int) {
-        self.heroId = heroId
+    init(id: Int) {
+        self.id = id
     }
 }
