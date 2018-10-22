@@ -168,9 +168,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvel_logo" translatesAutoresizingMaskIntoConstraints="NO" id="PDx-zJ-mld">
-                                <rect key="frame" x="16" y="80" width="343" height="250"/>
+                                <rect key="frame" x="16" y="80" width="343" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="2zi-gw-Rp6"/>
+                                    <constraint firstAttribute="height" constant="200" id="2zi-gw-Rp6"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -182,24 +182,24 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NED-sU-xW1">
-                                <rect key="frame" x="16" y="410" width="343" height="241"/>
+                                <rect key="frame" x="16" y="360" width="343" height="291"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bNe-jF-Qvq">
-                                    <size key="itemSize" width="130" height="178"/>
+                                    <size key="itemSize" width="174" height="242"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="comicCell" id="BfE-Pl-Tnb" customClass="ComicCell" customModule="MarvelApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="31.5" width="130" height="178"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="174" height="242"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="130" height="178"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="174" height="242"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V4o-a4-yiG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="178"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="174" height="242"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -216,7 +216,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5fB-4C-Mka">
-                                <rect key="frame" x="16" y="338" width="343" height="40"/>
+                                <rect key="frame" x="16" y="288" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kky-bV-cYv"/>
                                 </constraints>

@@ -51,6 +51,33 @@ class HeroesDataSourceTest: XCTestCase {
         }
     }
     
+    func testComicsFetch() {
+        
+        let expectation = self.expectation(description: "comicsResult")
+        
+        var errorFound: Bool = false
+        
+        let heroId = 1010354
+        
+        dataSource.fetchComics(id: heroId) { (error) in
+            if error != nil{
+                errorFound = true
+            }
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 15, handler: nil)
+        
+        if errorFound{
+            fatalError("Could not fetch comics")
+        } else{
+            XCTAssertNotEqual(self.dataSource.comicsForHero[heroId]?.count, 0)
+            XCTAssertNotNil(self.dataSource.comicsForHero[heroId])
+            XCTAssertNotEqual(self.dataSource.comicsForHero[heroId]?.first?!.title, "")
+            XCTAssertNotNil(self.dataSource.comicsForHero[heroId]?.first?!.id)
+        }
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
