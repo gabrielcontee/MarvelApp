@@ -2,7 +2,7 @@
 
 ***designed by Gabriel Conte for Agibank selective process***
 
-Code coverage: **%**
+Code coverage: **79.66%**
 
 **Highlights**
 - MVVM 
