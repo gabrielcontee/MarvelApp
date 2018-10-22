@@ -29,6 +29,22 @@ class MarvelAppUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        app.buttons["Start"].tap()
+        XCUIDevice.shared.orientation = .portrait
+        XCUIDevice.shared.orientation = .landscapeLeft
+        XCUIDevice.shared.orientation = .portrait
+        sleep(1)
+        let element = app.collectionViews.children(matching: .cell).element(boundBy: 1)
+        element.tap()
+        sleep(1)
+        app.otherElements.containing(.navigationBar, identifier:"Details").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.tap()
+        XCUIDevice.shared.orientation = .landscapeRight
+        XCUIDevice.shared.orientation = .portrait
+        app.navigationBars["Details"].buttons["Heroes"].tap()
+        app.navigationBars["Heroes"].buttons["Welcome"].tap()
+        
     }
 
 }

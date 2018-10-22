@@ -31,23 +31,20 @@ class DetailsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        appDelegate?.enableAllOrientation = false
         heroNameLabel.text = heroName
         heroImageView.image = heroImage
         heroDescriptionLabel.text = viewModel.fillDescriptionLabel(with: heroDescription)
-        appDelegate?.enableAllOrientation = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         appDelegate?.enableAllOrientation = true
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        if self.stackView.axis == .horizontal{
-            self.stackView.axis = .vertical
-        }else{
-            self.stackView.axis = .horizontal
-        }
+    override var shouldAutorotate: Bool {
+        return true
     }
     
 }
