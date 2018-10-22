@@ -12,8 +12,8 @@ class DetailsViewController: UIViewController {
     
     
     @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var imageBackView: UIView!
     @IBOutlet weak var heroImageView: UIImageView!
+    @IBOutlet weak var heroNameLabel: UILabel!
     @IBOutlet weak var heroDescriptionLabel: UILabel!
     
     private lazy var viewModel = HeroesDetailsViewModel()
@@ -22,13 +22,17 @@ class DetailsViewController: UIViewController {
     lazy var heroImage: UIImage = UIImage()
     lazy var heroDescription: String = ""
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.title = heroName
+        heroNameLabel.text = heroName
         heroImageView.image = heroImage
-        imageBackView.layer.cornerRadius = self.imageBackView.layer.bounds.height / 8
         heroDescriptionLabel.text = viewModel.fillDescriptionLabel(with: heroDescription)
-        
+        AppUtility.lockOrientation(.)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

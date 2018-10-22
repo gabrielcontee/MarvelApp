@@ -12,7 +12,7 @@ class HeroesDetailsViewModel: NSObject {
     
     func fillDescriptionLabel(with string: String) -> String{
         if string != ""{
-          return "About: \(string)"
+          return string
         }else{
             return "There is not an available description for this character until now :("
         }

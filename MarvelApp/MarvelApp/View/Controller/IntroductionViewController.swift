@@ -14,6 +14,12 @@ class IntroductionViewController: UIViewController {
     
     @IBOutlet weak var startButton: UIButton!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         
         marvelView.fadeIn(hide: false, duration: 4.0)

@@ -21,6 +21,9 @@ class HeroesViewController: UIViewController {
         viewModel.fetchDelegate = self
         viewModel.errorDelegate = self
         
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = .white
+        
         viewModel.fetchAllHeroes()
     }
     
