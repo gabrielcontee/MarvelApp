@@ -35,6 +35,7 @@
 		3146E786217BA70C008F21E5 /* HTTPParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E785217BA70C008F21E5 /* HTTPParameter.swift */; };
 		31C7476C217D39F9000E4D71 /* HeroesDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C7476B217D39F9000E4D71 /* HeroesDetailsViewModel.swift */; };
 		31C7476E217D3D00000E4D71 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C7476D217D3D00000E4D71 /* UIAlertController.swift */; };
+		31DB804E217E542500D24C9F /* ComicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DB804D217E542500D24C9F /* ComicCell.swift */; };
 		31F8223B217BCA08000C50DF /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F8223A217BCA08000C50DF /* Keys.swift */; };
 		31F8223E217BE3FB000C50DF /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F8223D217BE3FB000C50DF /* ImageCacheManager.swift */; };
 		31F82242217C37AB000C50DF /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F82241217C37AB000C50DF /* DetailsViewController.swift */; };
@@ -96,6 +97,7 @@
 		3146E785217BA70C008F21E5 /* HTTPParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPParameter.swift; sourceTree = "<group>"; };
 		31C7476B217D39F9000E4D71 /* HeroesDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesDetailsViewModel.swift; sourceTree = "<group>"; };
 		31C7476D217D3D00000E4D71 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		31DB804D217E542500D24C9F /* ComicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCell.swift; sourceTree = "<group>"; };
 		31F8223A217BCA08000C50DF /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		31F8223D217BE3FB000C50DF /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		31F82241217C37AB000C50DF /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				3146E761217B7F57008F21E5 /* HeroCell.swift */,
+				31DB804D217E542500D24C9F /* ComicCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				3146E762217B7F57008F21E5 /* HeroCell.swift in Sources */,
 				31F82242217C37AB000C50DF /* DetailsViewController.swift in Sources */,
 				3146E75B217B7D11008F21E5 /* HeroesViewController.swift in Sources */,
+				31DB804E217E542500D24C9F /* ComicCell.swift in Sources */,
 				31F8223E217BE3FB000C50DF /* ImageCacheManager.swift in Sources */,
 				3146E780217BA64B008F21E5 /* ResponseContainer.swift in Sources */,
 				313BDE4B217D5DFD00BE975A /* Comic.swift in Sources */,

@@ -14,7 +14,8 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var heroImageView: UIImageView!
     @IBOutlet weak var heroNameLabel: UILabel!
-    @IBOutlet weak var heroDescriptionLabel: UILabel!
+    @IBOutlet weak var comicsCollection: UICollectionView!
+    
     
     private lazy var viewModel = HeroesDetailsViewModel()
     
@@ -29,6 +30,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.prefersLargeTitles = true
+        comicsCollection.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,9 +39,10 @@ class DetailsViewController: UIViewController {
         appDelegate?.enableAllOrientation = false
         heroNameLabel.text = heroName
         heroImageView.image = heroImage
-        heroDescriptionLabel.text = viewModel.fillDescriptionLabel(with: heroDescription)
         
-        viewModel.fetchComics(heroId: heroId)
+        viewModel.fetchComics(heroId: heroId) {
+            self.comicsCollection.reloadData()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -52,3 +55,20 @@ class DetailsViewController: UIViewController {
 
 }
 
+extension DetailsViewController: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.comics.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // used same cell because thei are identical
+        let comicCell = comicsCollection.dequeueReusableCell(withReuseIdentifier: "comicCell", for: indexPath) as! ComicCell
+        let data = viewModel.comic(for: indexPath.row)
+        comicCell.setup(imageURL: data?.thumbnail)
+        
+        return comicCell
+    }
+    
+    
+    
+}
