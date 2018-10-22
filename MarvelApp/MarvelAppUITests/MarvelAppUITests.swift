@@ -35,8 +35,9 @@ class MarvelAppUITests: XCTestCase {
         XCUIDevice.shared.orientation = .portrait
         XCUIDevice.shared.orientation = .landscapeLeft
         XCUIDevice.shared.orientation = .portrait
-        sleep(1)
+        sleep(10)
         let element = app.collectionViews.children(matching: .cell).element(boundBy: 1)
+        sleep(1)
         element.tap()
         sleep(1)
         app.otherElements.containing(.navigationBar, identifier:"Details").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.tap()
@@ -44,7 +45,7 @@ class MarvelAppUITests: XCTestCase {
         XCUIDevice.shared.orientation = .portrait
         app.navigationBars["Details"].buttons["Heroes"].tap()
         app.navigationBars["Heroes"].buttons["Welcome"].tap()
-        
+
     }
 
 }

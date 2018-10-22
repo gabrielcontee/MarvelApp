@@ -18,8 +18,13 @@ struct GetHeroes: APIRequest {
     
     // Parameters
     let name: String?
+    let limit: Int?
+    let offset: Int?
     
-    init(name: String? = nil) {
+    init(name: String? = nil, limit: Int? = nil,
+         offset: Int? = nil) {
         self.name = name
+        self.limit = limit
+        self.offset = offset
     }
 }

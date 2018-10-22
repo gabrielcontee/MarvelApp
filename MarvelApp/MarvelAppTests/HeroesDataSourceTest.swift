@@ -28,6 +28,7 @@ class HeroesDataSourceTest: XCTestCase {
     func testHeroesFetch() {
         
         let expectation = self.expectation(description: "heroesResult")
+        expectation.expectedFulfillmentCount = 10
     
         var errorFound: Bool = false
         
@@ -38,7 +39,7 @@ class HeroesDataSourceTest: XCTestCase {
             expectation.fulfill()
         }
         
-        waitForExpectations(timeout: 8, handler: nil)
+        waitForExpectations(timeout: 20, handler: nil)
         
         if errorFound{
             fatalError("Could not fetch characters")

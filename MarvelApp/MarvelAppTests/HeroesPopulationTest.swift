@@ -27,12 +27,13 @@ class HeroesPopulationTest: XCTestCase {
     
     func testHeroForIndex() {
         let expectation = self.expectation(description: "heroesForIndex")
-    
+        expectation.expectedFulfillmentCount = 10
+        
         viewModel.fetchAllHeroes {
             expectation.fulfill()
         }
         
-        waitForExpectations(timeout: 8, handler: nil)
+        waitForExpectations(timeout: 20, handler: nil)
         XCTAssertNotEqual(viewModel.hero(for: 0)?.name, "")
         XCTAssertNotNil(viewModel.hero(for: 0))
         XCTAssertNotNil(viewModel.hero(for: 0)?.id)
