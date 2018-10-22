@@ -125,6 +125,14 @@
                                             <constraint firstItem="SaJ-6L-sfc" firstAttribute="leading" secondItem="nh7-oz-bgj" secondAttribute="leading" id="rIb-Ju-ZY0"/>
                                             <constraint firstAttribute="trailing" secondItem="SaJ-6L-sfc" secondAttribute="trailing" id="rVL-eS-V6P"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="heroImageView" destination="SaJ-6L-sfc" id="6mM-wg-awN"/>
                                         </connections>
@@ -151,32 +159,21 @@
             </objects>
             <point key="canvasLocation" x="1748" y="26.53673163418291"/>
         </scene>
-        <!--Details View Controller-->
+        <!--Details-->
         <scene sceneID="tXS-Si-QFb">
             <objects>
-                <viewController id="6jz-HI-bec" customClass="DetailsViewController" customModule="MarvelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Details" id="6jz-HI-bec" customClass="DetailsViewController" customModule="MarvelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kta-Ft-1QG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YSX-V3-4Pm">
-                                <rect key="frame" x="16" y="96" width="327" height="539"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YSX-V3-4Pm">
+                                <rect key="frame" x="16" y="96" width="343" height="539"/>
                                 <subviews>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RX0-md-ZEl">
-                                        <rect key="frame" x="0.0" y="0.0" width="327" height="261.5"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvel_logo" translatesAutoresizingMaskIntoConstraints="NO" id="PDx-zJ-mld">
-                                                <rect key="frame" x="0.0" y="0.0" width="327" height="300"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="300" id="Dt5-gO-aE7"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvel_logo" translatesAutoresizingMaskIntoConstraints="NO" id="PDx-zJ-mld">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="300"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="PDx-zJ-mld" secondAttribute="trailing" id="btp-nq-5eJ"/>
-                                            <constraint firstItem="PDx-zJ-mld" firstAttribute="leading" secondItem="RX0-md-ZEl" secondAttribute="leading" id="ocE-jW-vJP"/>
-                                            <constraint firstItem="PDx-zJ-mld" firstAttribute="top" secondItem="RX0-md-ZEl" secondAttribute="top" id="uyS-7h-34T"/>
+                                            <constraint firstAttribute="height" constant="300" id="Dt5-gO-aE7"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -186,25 +183,30 @@
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBi-sc-6t3">
-                                        <rect key="frame" x="0.0" y="277.5" width="327" height="261.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5fB-4C-Mka">
+                                        <rect key="frame" x="0.0" y="310" width="343" height="219"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JBi-sc-6t3">
+                                        <rect key="frame" x="0.0" y="539" width="343" height="0.0"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="JBi-sc-6t3" firstAttribute="top" secondItem="RX0-md-ZEl" secondAttribute="bottom" constant="16" id="3sU-Jp-dUS"/>
-                                    <constraint firstAttribute="trailing" secondItem="RX0-md-ZEl" secondAttribute="trailing" id="5DD-r3-FvY"/>
+                                    <constraint firstItem="5fB-4C-Mka" firstAttribute="leading" secondItem="YSX-V3-4Pm" secondAttribute="leading" id="06t-Dl-NZd"/>
+                                    <constraint firstAttribute="trailing" secondItem="5fB-4C-Mka" secondAttribute="trailing" id="KmJ-qz-UT4"/>
                                     <constraint firstItem="JBi-sc-6t3" firstAttribute="leading" secondItem="YSX-V3-4Pm" secondAttribute="leading" id="Mfu-Hr-GbC"/>
                                     <constraint firstAttribute="trailing" secondItem="JBi-sc-6t3" secondAttribute="trailing" id="Zmd-3z-wzl"/>
-                                    <constraint firstItem="RX0-md-ZEl" firstAttribute="centerX" secondItem="YSX-V3-4Pm" secondAttribute="centerX" id="bgA-BL-7LO"/>
+                                    <constraint firstAttribute="trailing" secondItem="5fB-4C-Mka" secondAttribute="trailing" id="aOh-Ki-bMC"/>
                                     <constraint firstItem="JBi-sc-6t3" firstAttribute="centerX" secondItem="YSX-V3-4Pm" secondAttribute="centerX" id="gQl-Vj-E9D"/>
-                                    <constraint firstItem="RX0-md-ZEl" firstAttribute="top" secondItem="YSX-V3-4Pm" secondAttribute="top" id="gcP-P6-wg2"/>
-                                    <constraint firstItem="RX0-md-ZEl" firstAttribute="leading" secondItem="YSX-V3-4Pm" secondAttribute="leading" id="mZG-RW-rXR"/>
+                                    <constraint firstItem="5fB-4C-Mka" firstAttribute="leading" secondItem="YSX-V3-4Pm" secondAttribute="leading" id="z35-Dd-axD"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -212,7 +214,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="YSX-V3-4Pm" firstAttribute="top" secondItem="kta-Ft-1QG" secondAttribute="topMargin" constant="32" id="Mbr-SX-fqF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YSX-V3-4Pm" secondAttribute="trailing" constant="16" id="ZuW-RM-nSX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YSX-V3-4Pm" secondAttribute="trailing" id="ZuW-RM-nSX"/>
                             <constraint firstAttribute="bottom" secondItem="YSX-V3-4Pm" secondAttribute="bottom" constant="32" id="eja-hA-dmT"/>
                             <constraint firstItem="YSX-V3-4Pm" firstAttribute="leading" secondItem="kta-Ft-1QG" secondAttribute="leading" constant="16" id="veK-X6-sA9"/>
                         </constraints>
@@ -221,7 +223,7 @@
                     <connections>
                         <outlet property="heroDescriptionLabel" destination="JBi-sc-6t3" id="jAz-bu-raJ"/>
                         <outlet property="heroImageView" destination="PDx-zJ-mld" id="JQR-Fc-cq5"/>
-                        <outlet property="imageBackView" destination="RX0-md-ZEl" id="0MB-Tz-MZI"/>
+                        <outlet property="heroNameLabel" destination="5fB-4C-Mka" id="yPQ-o1-21b"/>
                         <outlet property="stackView" destination="YSX-V3-4Pm" id="Wkc-Vo-XS8"/>
                     </connections>
                 </viewController>
