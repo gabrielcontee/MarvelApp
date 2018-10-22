@@ -26,15 +26,28 @@ class HeroesDataSourceTest: XCTestCase {
     
     
     func testHeroesFetch() {
+        
         let expectation = self.expectation(description: "heroesResult")
-        dataSource.fetchHeroes {
+    
+        var errorFound: Bool = false
+        
+        dataSource.fetchHeroes { (error) in
+            if error != nil{
+                errorFound = true
+            }
             expectation.fulfill()
         }
+        
         waitForExpectations(timeout: 8, handler: nil)
-        XCTAssertNotEqual(dataSource.heroes.count, 0)
-        XCTAssertNotNil(dataSource.heroes)
-        XCTAssertNotEqual(dataSource.heroes[0]!.name, "")
-        XCTAssertNotNil(dataSource.heroes.first!)
+        
+        if errorFound{
+            fatalError("Could not fetch characters")
+        } else{
+            XCTAssertNotEqual(self.dataSource.heroes.count, 0)
+            XCTAssertNotNil(self.dataSource.heroes)
+            XCTAssertNotEqual(self.dataSource.heroes[0]!.name, "")
+            XCTAssertNotNil(self.dataSource.heroes.first!)
+        }
     }
     
     func testPerformanceExample() {
