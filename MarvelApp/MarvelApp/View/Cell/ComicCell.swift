@@ -10,7 +10,6 @@ import UIKit
 
 class ComicCell: UICollectionViewCell {
     
-    
     @IBOutlet weak var comicImageView: UIImageView!
     
     func setup(imageURL: Image?){

@@ -10,8 +10,6 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-    
-    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var heroImageView: UIImageView!
     @IBOutlet weak var heroNameLabel: UILabel!
     @IBOutlet weak var comicsCollection: UICollectionView!
@@ -41,7 +39,9 @@ class DetailsViewController: UIViewController {
         heroImageView.image = heroImage
         
         viewModel.fetchComics(heroId: heroId) {
-            self.comicsCollection.reloadData()
+            DispatchQueue.main.async {
+                self.comicsCollection.reloadData()
+            }
         }
     }
     
@@ -61,7 +61,6 @@ extension DetailsViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // used same cell because thei are identical
         let comicCell = comicsCollection.dequeueReusableCell(withReuseIdentifier: "comicCell", for: indexPath) as! ComicCell
         let data = viewModel.comic(for: indexPath.row)
         comicCell.setup(imageURL: data?.thumbnail)
