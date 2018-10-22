@@ -47,5 +47,7 @@ class DetailsViewController: UIViewController {
         return true
     }
     
+    
+    
 }
 

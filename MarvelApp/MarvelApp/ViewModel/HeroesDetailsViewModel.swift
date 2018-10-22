@@ -10,6 +10,8 @@ import Foundation
 
 class HeroesDetailsViewModel: NSObject {
     
+    private lazy var dataSource = HeroesDataSource()
+    
     func fillDescriptionLabel(with string: String) -> String{
         if string != ""{
           return string
@@ -17,4 +19,7 @@ class HeroesDetailsViewModel: NSObject {
             return "There is not an available description for this character until now :("
         }
     }
+    
+    
+    
 }
