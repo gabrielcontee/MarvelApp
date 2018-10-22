@@ -18,6 +18,8 @@ class DetailsViewController: UIViewController {
     
     private lazy var viewModel = HeroesDetailsViewModel()
     
+    private lazy var appDelegate = UIApplication.shared.delegate as? AppDelegate
+    
     lazy var heroName: String = ""
     lazy var heroImage: UIImage = UIImage()
     lazy var heroDescription: String = ""
@@ -32,7 +34,11 @@ class DetailsViewController: UIViewController {
         heroNameLabel.text = heroName
         heroImageView.image = heroImage
         heroDescriptionLabel.text = viewModel.fillDescriptionLabel(with: heroDescription)
-        AppUtility.lockOrientation(.)
+        appDelegate?.enableAllOrientation = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        appDelegate?.enableAllOrientation = true
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
