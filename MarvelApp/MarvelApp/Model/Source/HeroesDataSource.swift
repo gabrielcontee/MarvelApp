@@ -17,15 +17,21 @@ class HeroesDataSource: NSObject{
     lazy var heroes: [Hero?] = []
     lazy var comicsForHero: [Id: [Comic?]] = [:]
     
+    private lazy var fetchParameters: [(offset: Int, limit: Int)] = [(0, 100), (100, 100), (200, 100), (300, 100), (400, 100), (500, 100), (600, 100), (700, 100), (800, 100), (900, 100)]
+    
     func fetchHeroes(completion: @escaping (Error?)->()){
-        apiClient.send(GetHeroes()) { (result) in
-            switch result{
-            case .success(let characters):
-                self.heroes = characters.results
-                completion(nil)
-            case .failure(let error):
-                print(error)
-                completion(error)
+        for parameter in fetchParameters{
+            apiClient.send(GetHeroes(limit: parameter.limit, offset: parameter.offset)) { (result) in
+                switch result{
+                case .success(let characters):
+                    characters.results.forEach({ (hero) in
+                        self.heroes.append(hero)
+                    })
+                    completion(nil)
+                case .failure(let error):
+                    print(error)
+                    completion(error)
+                }
             }
         }
     }
