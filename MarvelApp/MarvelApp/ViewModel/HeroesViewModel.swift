@@ -41,7 +41,6 @@ class HeroesViewModel: NSObject{
                 print("Finished fetching heroes!")
                 self.heroes = self.dataSource.heroes
                 self.fetchDelegate?.loadData()
-                print(self.heroes)
                 completion?()
             }else{
                 self.errorDelegate?.alertError(msg: "Fetch failed, please try again")

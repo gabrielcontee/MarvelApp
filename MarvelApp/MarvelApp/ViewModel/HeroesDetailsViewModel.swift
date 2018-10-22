@@ -20,6 +20,14 @@ class HeroesDetailsViewModel: NSObject {
         }
     }
     
-    
+    func fetchComics(heroId: Int){
+        dataSource.fetchComics(id: heroId) { (error) in
+            if error == nil{
+                print(self.dataSource.comicsForHero)
+            }else{
+                print("Could not load character comics")
+            }
+        }
+    }
     
 }

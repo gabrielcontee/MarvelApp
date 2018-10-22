@@ -20,6 +20,7 @@ class DetailsViewController: UIViewController {
     
     private lazy var appDelegate = UIApplication.shared.delegate as? AppDelegate
     
+    lazy var heroId: Int = 0
     lazy var heroName: String = ""
     lazy var heroImage: UIImage = UIImage()
     lazy var heroDescription: String = ""
@@ -37,6 +38,8 @@ class DetailsViewController: UIViewController {
         heroNameLabel.text = heroName
         heroImageView.image = heroImage
         heroDescriptionLabel.text = viewModel.fillDescriptionLabel(with: heroDescription)
+        
+        viewModel.fetchComics(heroId: heroId)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -46,8 +49,6 @@ class DetailsViewController: UIViewController {
     override var shouldAutorotate: Bool {
         return true
     }
-    
-    
-    
+
 }
 

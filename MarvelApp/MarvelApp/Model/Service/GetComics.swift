@@ -14,7 +14,7 @@ struct GetComic: APIRequest {
     
     // Notice how we create a composed resourceName
     var resourceName: String {
-        return "\(heroId)/comics"
+        return "characters/\(heroId)/comics"
     }
     
     // Parameters

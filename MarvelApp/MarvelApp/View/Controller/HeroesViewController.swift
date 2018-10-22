@@ -44,6 +44,7 @@ class HeroesViewController: UIViewController {
             if let selectedIndexPath = heroesCollectionView.indexPathsForSelectedItems?.first{
                 let data = viewModel.hero(for: selectedIndexPath.row)
                 let cell = collectionView(heroesCollectionView, cellForItemAt: selectedIndexPath) as! HeroCell
+                detailsController.heroId = data?.id ?? 0
                 detailsController.heroName = data?.name ?? ""
                 detailsController.heroImage = cell.heroImageView.image ?? UIImage(named: "marvel_logo")!
                 detailsController.heroDescription = data?.description ?? ""
