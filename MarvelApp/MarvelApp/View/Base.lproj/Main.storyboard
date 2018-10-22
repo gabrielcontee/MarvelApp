@@ -170,7 +170,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YSX-V3-4Pm">
                                 <rect key="frame" x="16" y="96" width="343" height="539"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvel_logo" translatesAutoresizingMaskIntoConstraints="NO" id="PDx-zJ-mld">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvel_logo" translatesAutoresizingMaskIntoConstraints="NO" id="PDx-zJ-mld">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="300"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="Dt5-gO-aE7"/>
