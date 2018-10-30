@@ -24,7 +24,11 @@ class HeroesViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .white
         
-        viewModel.fetchAllHeroes()
+        let activityIndicator = UIViewController.displaySpinner(onView: self.view)
+        
+        viewModel.fetchAllHeroes {
+            UIViewController.removeSpinner(spinner: activityIndicator)
+        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

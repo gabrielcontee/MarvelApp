@@ -37,6 +37,7 @@
 		31C7476E217D3D00000E4D71 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C7476D217D3D00000E4D71 /* UIAlertController.swift */; };
 		31DB804E217E542500D24C9F /* ComicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DB804D217E542500D24C9F /* ComicCell.swift */; };
 		31DB8050217E5B5200D24C9F /* ComicsPopulationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DB804F217E5B5200D24C9F /* ComicsPopulationTest.swift */; };
+		31F457752188F39100041797 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F457742188F39100041797 /* UIViewController.swift */; };
 		31F8223B217BCA08000C50DF /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F8223A217BCA08000C50DF /* Keys.swift */; };
 		31F8223E217BE3FB000C50DF /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F8223D217BE3FB000C50DF /* ImageCacheManager.swift */; };
 		31F82242217C37AB000C50DF /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F82241217C37AB000C50DF /* DetailsViewController.swift */; };
@@ -100,6 +101,7 @@
 		31C7476D217D3D00000E4D71 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		31DB804D217E542500D24C9F /* ComicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCell.swift; sourceTree = "<group>"; };
 		31DB804F217E5B5200D24C9F /* ComicsPopulationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsPopulationTest.swift; sourceTree = "<group>"; };
+		31F457742188F39100041797 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		31F8223A217BCA08000C50DF /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		31F8223D217BE3FB000C50DF /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		31F82241217C37AB000C50DF /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				3146E756217B7676008F21E5 /* UIView.swift */,
 				31C7476D217D3D00000E4D71 /* UIAlertController.swift */,
+				31F457742188F39100041797 /* UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 			files = (
 				3146E777217BA1F0008F21E5 /* GetHeroes.swift in Sources */,
 				3146E766217B8100008F21E5 /* HeroesDataSource.swift in Sources */,
+				31F457752188F39100041797 /* UIViewController.swift in Sources */,
 				3146E75E217B7E10008F21E5 /* HeroesViewModel.swift in Sources */,
 				3146E757217B7676008F21E5 /* UIView.swift in Sources */,
 				3146E77C217BA519008F21E5 /* Result.swift in Sources */,
