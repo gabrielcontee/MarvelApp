@@ -38,9 +38,12 @@ class DetailsViewController: UIViewController {
         heroNameLabel.text = heroName
         heroImageView.image = heroImage
         
+        let activityIndicator = UIViewController.displaySpinner(onView: self.view)
+        
         viewModel.fetchComics(heroId: heroId) {
             DispatchQueue.main.async {
                 self.comicsCollection.reloadData()
+                UIViewController.removeSpinner(spinner: activityIndicator)
             }
         }
     }
