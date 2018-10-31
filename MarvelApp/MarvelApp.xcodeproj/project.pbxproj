@@ -31,6 +31,7 @@
 		3146E780217BA64B008F21E5 /* ResponseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E77F217BA64B008F21E5 /* ResponseContainer.swift */; };
 		3146E784217BA6EE008F21E5 /* URLQueryItemEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E783217BA6EE008F21E5 /* URLQueryItemEncoder.swift */; };
 		3146E786217BA70C008F21E5 /* HTTPParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E785217BA70C008F21E5 /* HTTPParameter.swift */; };
+		31C1030F218A4E470065434C /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C1030E218A4E470065434C /* Assembly.swift */; };
 		31C7476C217D39F9000E4D71 /* HeroesDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C7476B217D39F9000E4D71 /* HeroesDetailsViewModel.swift */; };
 		31C7476E217D3D00000E4D71 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C7476D217D3D00000E4D71 /* UIAlertController.swift */; };
 		31DB804E217E542500D24C9F /* ComicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DB804D217E542500D24C9F /* ComicCell.swift */; };
@@ -86,6 +87,7 @@
 		3146E77F217BA64B008F21E5 /* ResponseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseContainer.swift; sourceTree = "<group>"; };
 		3146E783217BA6EE008F21E5 /* URLQueryItemEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryItemEncoder.swift; sourceTree = "<group>"; };
 		3146E785217BA70C008F21E5 /* HTTPParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPParameter.swift; sourceTree = "<group>"; };
+		31C1030E218A4E470065434C /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		31C7476B217D39F9000E4D71 /* HeroesDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesDetailsViewModel.swift; sourceTree = "<group>"; };
 		31C7476D217D3D00000E4D71 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		31DB804D217E542500D24C9F /* ComicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCell.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				3146E722217B6DFE008F21E5 /* AppDelegate.swift */,
+				31C1030E218A4E470065434C /* Assembly.swift */,
 				3146E729217B6E00008F21E5 /* Assets.xcassets */,
 				3146E72B217B6E00008F21E5 /* LaunchScreen.storyboard */,
 			);
@@ -455,6 +458,8 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -463,6 +468,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -481,6 +488,8 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -489,6 +498,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -541,6 +552,7 @@
 				3146E75B217B7D11008F21E5 /* HeroesViewController.swift in Sources */,
 				31DB804E217E542500D24C9F /* ComicCell.swift in Sources */,
 				31F8223E217BE3FB000C50DF /* ImageCacheManager.swift in Sources */,
+				31C1030F218A4E470065434C /* Assembly.swift in Sources */,
 				3146E780217BA64B008F21E5 /* ResponseContainer.swift in Sources */,
 				313BDE4B217D5DFD00BE975A /* Comic.swift in Sources */,
 				31E99E8E2189385100CBC26F /* CharacterCollectionViewCell.swift in Sources */,

@@ -8,7 +8,13 @@
 
 import Foundation
 
-class HeroesDataSource: NSObject{
+protocol HeroesDataSourceProtocol {
+    func fetchComics(id: Int, completion: @escaping (Error?)->())
+    func fetchHeroes(completion: @escaping (Error?)->())
+    var heroes: [Hero?] {get set}
+}
+
+class HeroesDataSource: NSObject, HeroesDataSourceProtocol{
     
     typealias Id = Int
     

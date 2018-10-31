@@ -16,9 +16,18 @@ protocol ErrorAlertDelegate {
     func alertError(msg: String)
 }
 
-class HeroesViewModel: NSObject{
+protocol HeroesViewModelDelegate {
+    func numberOfHeroes() -> Int
+    func hero(for index: Int) -> Hero?
+    func fetchAllHeroes(completion:(()->())?)
+    var fetchDelegate: HeroesFetchDelegate? {get set}
+    var errorDelegate: ErrorAlertDelegate? {get set}
+}
+
+
+class HeroesViewModel: NSObject, HeroesViewModelDelegate{
     
-    private lazy var dataSource = HeroesDataSource()
+    var dataSource: HeroesDataSourceProtocol!
     
     var fetchDelegate: HeroesFetchDelegate?
     var errorDelegate: ErrorAlertDelegate?

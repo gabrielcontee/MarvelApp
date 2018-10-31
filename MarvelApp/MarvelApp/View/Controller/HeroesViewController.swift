@@ -12,7 +12,7 @@ class HeroesViewController: UIViewController {
     
     @IBOutlet weak var heroesCollectionView: UICollectionView!
     
-    private lazy var viewModel = HeroesViewModel()
+    var viewModel: HeroesViewModelDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +98,7 @@ extension HeroesViewController: ErrorAlertDelegate{
     
     func alertError(msg: String) {
         let alert = UIAlertController.alertUser(msg) { (action) in
-            self.viewModel.fetchAllHeroes()
+            self.viewModel.fetchAllHeroes(completion: nil)
         }
         self.present(alert, animated: true, completion: nil)
     }

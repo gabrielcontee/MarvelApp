@@ -13,7 +13,7 @@ struct GetHeroes: APIRequest {
     typealias Response = [Hero]
     
     var resourceName: String {
-        return "characters"
+        return "characters?offset=\(offset ?? 0)"
     }
     
     // Parameters

@@ -12,11 +12,31 @@ import XCTest
 
 class HeroesPopulationTest: XCTestCase {
     
+    class DataSourceMock: HeroesDataSourceProtocol {
+        
+        var heroes: [Hero?] = []
+        
+        var gerarErro: Bool = false
+        func fetchComics(id: Int, completion: @escaping (Error?) -> ()) {
+            
+        }
+        
+        func fetchHeroes(completion: @escaping (Error?) -> ()) {
+            // wait time
+            
+            completion(nil)
+        }
+        
+    }
+    
     var viewModel: HeroesViewModel!
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         viewModel = HeroesViewModel()
+        let ds = DataSourceMock()
+        ds.gerarErro = true
+        viewModel.dataSource = ds
     }
     
     override func tearDown() {

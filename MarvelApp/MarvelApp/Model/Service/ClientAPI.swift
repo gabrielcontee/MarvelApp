@@ -61,11 +61,13 @@ class ClientAPI {
         // Common query items needed for all Marvel requests
         let timestamp = "\(Date().timeIntervalSince1970)"
         let hash = "\(timestamp)\(privateKey)\(publicKey)".md5()
-        let commonQueryItems = [
+        var commonQueryItems = components.queryItems ?? []
+        commonQueryItems.append(contentsOf:
+            [
             URLQueryItem(name: "ts", value: timestamp),
             URLQueryItem(name: "hash", value: hash),
             URLQueryItem(name: "apikey", value: publicKey)
-        ]
+        ])
         
         components.queryItems = commonQueryItems
         
