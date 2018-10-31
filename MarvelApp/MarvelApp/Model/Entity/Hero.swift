@@ -14,4 +14,11 @@ struct Hero: Decodable{
     let name: String?
     let description: String?
     let thumbnail: Image?
+    
+    init(id: Int, name: String? = nil, description: String? = nil) {
+        self.id = id
+        self.name = name
+        self.description = description
+        self.thumbnail = nil
+    }
 }

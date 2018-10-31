@@ -16,7 +16,8 @@ class HeroesPopulationTest: XCTestCase {
         
         var heroes: [Hero?] = []
         
-        var gerarErro: Bool = false
+        var generateError: Bool = false
+        
         func fetchComics(id: Int, completion: @escaping (Error?) -> ()) {
             
         }
