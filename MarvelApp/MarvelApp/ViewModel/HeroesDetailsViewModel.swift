@@ -8,9 +8,15 @@
 
 import Foundation
 
-class HeroesDetailsViewModel: NSObject {
+protocol DetailViewModelDelegate{
+    func fillDescriptionLabel(with string: String) -> String
+    func comic(for index: Int) -> Comic?
+    func fetchComics(heroId: Int, completion: @escaping ()->())
+}
+
+class HeroesDetailsViewModel: NSObject, DetailViewModelDelegate {
     
-    private lazy var dataSource = HeroesDataSource()
+    var dataSource: DetailsDataSourceProtocol!
     
     var comics: [Comic?] = []
     

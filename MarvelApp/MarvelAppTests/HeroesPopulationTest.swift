@@ -36,7 +36,7 @@ class HeroesPopulationTest: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         viewModel = HeroesViewModel()
         let ds = DataSourceMock()
-        ds.gerarErro = true
+        ds.generateError = true
         viewModel.dataSource = ds
     }
     

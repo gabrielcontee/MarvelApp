@@ -14,7 +14,8 @@ extension SwinjectStoryboard{
     
     class func setup(){
         setupDataSource()
-        setupViewModel()
+        setupHeroesViewModel()
+        setupDetailsViewModel()
         setupViewController()
     }
     
@@ -26,10 +27,18 @@ extension SwinjectStoryboard{
         
     }
     
-    private class func setupViewModel(){
+    private class func setupHeroesViewModel(){
         defaultContainer.register(HeroesViewModelDelegate.self) { r in
             let vm = HeroesViewModel()
             vm.dataSource = r.resolve(HeroesDataSourceProtocol.self)
+            return vm
+        }
+    }
+    
+    private class func setupDetailsViewModel(){
+        defaultContainer.register(DetailViewModelDelegate.self) { r in
+            let vm = HeroesDetailsViewModel()
+            vm.dataSource = r.resolve(DetailsDataSourceProtocol.self)
             return vm
         }
     }
