@@ -37,7 +37,7 @@ class ImageCacheManager: NSObject {
         imageView.af_cancelImageRequest()
         
         // Downloads the image
-        imageView.af_setImage(withURL: url, placeholderImage: placeholderImage) { (response) in
+        imageView.af_setImage(withURL: url, placeholderImage: placeholderImage) { [unowned self]  (response) in
             // If the image is new, adds it in cache
             if let img = response.result.value{
                 self.imageCache.add(img, withIdentifier: heroImageString)

@@ -29,7 +29,7 @@ class HeroesViewController: UIViewController {
         
         let activityIndicator = UIViewController.displaySpinner(onView: self.view)
         
-        viewModel.fetchAllHeroes {
+        viewModel.fetchAllHeroes { 
             UIViewController.removeSpinner(spinner: activityIndicator)
         }
     }

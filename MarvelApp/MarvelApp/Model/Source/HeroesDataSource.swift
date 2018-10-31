@@ -22,7 +22,7 @@ class HeroesDataSource: NSObject{
     
     func fetchHeroes(completion: @escaping (Error?)->()){
         for parameter in fetchParameters{
-            apiClient.send(GetHeroes(limit: parameter.limit, offset: parameter.offset)) { (result) in
+            apiClient.send(GetHeroes(limit: parameter.limit, offset: parameter.offset)) { [unowned self] (result) in
                 switch result{
                 case .success(let characters):
                     characters.results.forEach({ (hero) in
@@ -38,7 +38,7 @@ class HeroesDataSource: NSObject{
     }
     
     func fetchComics(id: Int, completion: @escaping (Error?)->()){
-        apiClient.send(GetComic(id: id)) { (result) in
+        apiClient.send(GetComic(id: id)) { [unowned self] (result) in
             switch result{
             case .success(let comics):
                 self.comicsForHero[id] = comics.results
