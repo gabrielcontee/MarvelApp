@@ -18,6 +18,9 @@ class HeroesViewController: UIViewController {
         super.viewDidLoad()
         heroesCollectionView.delegate = self
         heroesCollectionView.dataSource = self
+        let nib = UINib(nibName: String(describing: CharacterCollectionViewCell.self), bundle: nil)
+        heroesCollectionView.register(nib, forCellWithReuseIdentifier: String(describing: CharacterCollectionViewCell.self))
+        
         viewModel.fetchDelegate = self
         viewModel.errorDelegate = self
         
@@ -47,7 +50,7 @@ class HeroesViewController: UIViewController {
             let detailsController: DetailsViewController = segue.destination as! DetailsViewController
             if let selectedIndexPath = heroesCollectionView.indexPathsForSelectedItems?.first{
                 let data = viewModel.hero(for: selectedIndexPath.row)
-                let cell = collectionView(heroesCollectionView, cellForItemAt: selectedIndexPath) as! HeroCell
+                let cell = collectionView(heroesCollectionView, cellForItemAt: selectedIndexPath) as! CharacterCollectionViewCell
                 detailsController.heroId = data?.id ?? 0
                 detailsController.heroName = data?.name ?? ""
                 detailsController.heroImage = cell.heroImageView.image ?? UIImage(named: "marvel_logo")!
@@ -65,7 +68,7 @@ extension HeroesViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let heroCell = heroesCollectionView.dequeueReusableCell(withReuseIdentifier: "heroCell", for: indexPath) as! HeroCell
+        let heroCell = heroesCollectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CharacterCollectionViewCell.self), for: indexPath) as! CharacterCollectionViewCell
         let data = viewModel.hero(for: indexPath.row)
         heroCell.setup(imageURL: data?.thumbnail)
         

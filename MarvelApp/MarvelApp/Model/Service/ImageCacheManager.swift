@@ -30,7 +30,6 @@ class ImageCacheManager: NSObject {
         let cachedAvatarImage = imageCache.image(withIdentifier: heroImageString)
         if let cached = cachedAvatarImage{
             imageView.image = cached
-            print("Image was already cached!")
             return
         }
         
