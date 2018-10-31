@@ -38,7 +38,6 @@ class HeroesViewModel: NSObject{
     func fetchAllHeroes(completion:(()->())? = nil){
         dataSource.fetchHeroes { (error) in
             if error == nil{
-                print("Finished fetching heroes!")
                 self.heroes = self.dataSource.heroes
                 self.fetchDelegate?.loadData()
                 completion?()
