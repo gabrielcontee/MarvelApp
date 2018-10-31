@@ -12,11 +12,31 @@ import XCTest
 
 class ComicsPopulationTest: XCTestCase {
     
+    var mocks = Mocks.shared
+    
+    class DataSourceMock: DetailsDataSourceProtocol {
+        
+        var heroes: [Hero?] = []
+        
+        var comicsForHero: [Int: [Comic?]] = [:]
+        
+        var generateError: Bool = false
+        
+        func fetchComics(id: Int, completion: @escaping (Error?) -> ()) {
+            // wait time
+            
+            completion(nil)
+        }
+        
+    }
+    
     var viewModel: HeroesDetailsViewModel!
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         viewModel = HeroesDetailsViewModel()
+        let ds = DataSourceMock()
+        viewModel.dataSource = ds
     }
     
     override func tearDown() {
@@ -41,6 +61,11 @@ class ComicsPopulationTest: XCTestCase {
         XCTAssertNotNil(viewModel.comic(for: 0)?.title)
         XCTAssertNotNil(viewModel.comic(for: 0)?.thumbnail)
         XCTAssertNotEqual(viewModel.comic(for: 0)?.id, viewModel.comic(for: 1)?.id)
+        
+        XCTAssertEqual(viewModel.comic(for: 0)?.title, mocks.firstHero.name)
+        XCTAssertEqual(viewModel.comic(for: 0)?.id, mocks.firstHero.id)
+        XCTAssertEqual(viewModel.comic(for: 1)?.title, mocks.secondHero.name)
+        XCTAssertEqual(viewModel.comic(for: 1)?.id, mocks.secondHero.id)
     }
     
     func testPerformanceExample() {

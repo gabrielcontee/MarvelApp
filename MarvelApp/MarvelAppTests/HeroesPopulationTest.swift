@@ -12,15 +12,13 @@ import XCTest
 
 class HeroesPopulationTest: XCTestCase {
     
+    var mocks = Mocks.shared
+    
     class DataSourceMock: HeroesDataSourceProtocol {
         
         var heroes: [Hero?] = []
         
         var generateError: Bool = false
-        
-        func fetchComics(id: Int, completion: @escaping (Error?) -> ()) {
-            
-        }
         
         func fetchHeroes(completion: @escaping (Error?) -> ()) {
             // wait time
@@ -36,7 +34,6 @@ class HeroesPopulationTest: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         viewModel = HeroesViewModel()
         let ds = DataSourceMock()
-        ds.generateError = true
         viewModel.dataSource = ds
     }
     
@@ -65,6 +62,13 @@ class HeroesPopulationTest: XCTestCase {
         XCTAssertNotNil(viewModel.hero(for: 1)?.name)
         XCTAssertNotNil(viewModel.hero(for: 1)?.thumbnail)
         XCTAssertNotEqual(viewModel.hero(for: 0)?.id, viewModel.hero(for: 1)?.id)
+        XCTAssertEqual(viewModel.hero(for: 0)?.name, mocks.firstHero.name)
+        XCTAssertEqual(viewModel.hero(for: 0)?.id, mocks.firstHero.id)
+        XCTAssertEqual(viewModel.hero(for: 0)?.description, mocks.firstHero.description)
+        XCTAssertEqual(viewModel.hero(for: 1)?.name, mocks.secondHero.name)
+        XCTAssertEqual(viewModel.hero(for: 1)?.id, mocks.secondHero.id)
+        XCTAssertEqual(viewModel.hero(for: 1)?.description, mocks.secondHero.description)
+        
     }
     
     func testPerformanceExample() {
