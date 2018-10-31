@@ -1,16 +1,21 @@
 //
-//  HeroCell.swift
+//  CharacterCollectionViewCell.swift
 //  MarvelApp
 //
-//  Created by Gabriel Conte on 20/10/18.
+//  Created by Gabriel Conte on 30/10/18.
 //  Copyright © 2018 Gabriel Conte. All rights reserved.
 //
 
 import UIKit
 
-class HeroCell: UICollectionViewCell {
+class CharacterCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var heroImageView: UIImageView!
+     @IBOutlet weak var heroImageView: UIImageView!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
     
     func setup(imageURL: Image?){
         
@@ -21,4 +26,5 @@ class HeroCell: UICollectionViewCell {
         
         heroImageView.downloadImage(imageURL: image.url.absoluteString)
     }
+
 }

@@ -17,11 +17,12 @@ $ pod instal
 
 ### More infos:
 
-Code coverage: **79.66%**
+Code coverage: **78.45%**
 
 **Highlights**
 - MVVM 
 - Unit Testing
 - UI Testing
+- Xibs
 - CryptoSwift for encryption
 - AlamofireImage for image caching

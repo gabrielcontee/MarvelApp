@@ -98,33 +98,13 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="heroCell" id="nh7-oz-bgj" customClass="HeroCell" customModule="MarvelApp" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="heroCell" id="nh7-oz-bgj" customClass="CharacterCollectionViewCell" customModule="MarvelApp" customModuleProvider="target">
                                         <rect key="frame" x="14" y="0.0" width="315" height="242"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="315" height="242"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SaJ-6L-sfc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="315" height="242"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="8"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
-                                            </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="SaJ-6L-sfc" secondAttribute="bottom" id="6bh-1u-6hn"/>
-                                            <constraint firstItem="SaJ-6L-sfc" firstAttribute="top" secondItem="nh7-oz-bgj" secondAttribute="top" id="7Z9-qb-Ezo"/>
-                                            <constraint firstAttribute="trailing" secondItem="SaJ-6L-sfc" secondAttribute="trailing" id="NwF-AP-WiP"/>
-                                            <constraint firstItem="SaJ-6L-sfc" firstAttribute="top" secondItem="nh7-oz-bgj" secondAttribute="top" id="VTy-EV-pmV"/>
-                                            <constraint firstAttribute="bottom" secondItem="SaJ-6L-sfc" secondAttribute="bottom" id="Xrm-sL-1ZE"/>
-                                            <constraint firstItem="SaJ-6L-sfc" firstAttribute="leading" secondItem="nh7-oz-bgj" secondAttribute="leading" id="iJr-IB-Wu0"/>
-                                            <constraint firstItem="SaJ-6L-sfc" firstAttribute="leading" secondItem="nh7-oz-bgj" secondAttribute="leading" id="rIb-Ju-ZY0"/>
-                                            <constraint firstAttribute="trailing" secondItem="SaJ-6L-sfc" secondAttribute="trailing" id="rVL-eS-V6P"/>
-                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="1"/>
@@ -133,9 +113,6 @@
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outlet property="heroImageView" destination="SaJ-6L-sfc" id="6mM-wg-awN"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
