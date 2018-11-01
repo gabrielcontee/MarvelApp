@@ -15,7 +15,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var comicsCollection: UICollectionView!
     
     
-    private lazy var viewModel = HeroesDetailsViewModel()
+    var viewModel: DetailViewModelDelegate!
     
     private lazy var appDelegate = UIApplication.shared.delegate as? AppDelegate
     

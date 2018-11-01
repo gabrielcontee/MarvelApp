@@ -12,6 +12,7 @@ protocol DetailViewModelDelegate{
     func fillDescriptionLabel(with string: String) -> String
     func comic(for index: Int) -> Comic?
     func fetchComics(heroId: Int, completion: @escaping ()->())
+    var comics: [Comic?] {get set}
 }
 
 class HeroesDetailsViewModel: NSObject, DetailViewModelDelegate {

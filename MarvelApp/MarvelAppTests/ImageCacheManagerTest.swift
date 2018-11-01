@@ -14,6 +14,8 @@ class ImageCacheManagerTest: XCTestCase {
     
     var manager: ImageCacheManager!
     
+    let mocks = Mocks.shared
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         manager = ImageCacheManager()
@@ -31,6 +33,7 @@ class ImageCacheManagerTest: XCTestCase {
         let initialImage = UIImageView()
         let finalImage = UIImageView()
         
+        // Mudar para o download da imagem do terceiro herói
         finalImage.downloadImage(imageURL: "http://i.annihil.us/u/prod/marvel/i/mg/6/20/52602f21f29ec.jpg")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 8.0) {
@@ -44,9 +47,7 @@ class ImageCacheManagerTest: XCTestCase {
         
         let expectation2 = self.expectation(description: "imageCacheRetrieve")
         
-        let newImage = UIImageView()
-        
-        newImage.downloadImage(imageURL: "http://i.annihil.us/u/prod/marvel/i/mg/6/20/52602f21f29ec.jpg")
+        newImage.downloadImage(imageURL: mocks.thirdHeroImageString)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             expectation2.fulfill()
