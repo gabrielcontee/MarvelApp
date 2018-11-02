@@ -31,7 +31,7 @@ class HeroesViewModel: NSObject, HeroesViewModelDelegate{
     
     var fetchDelegate: HeroesFetchDelegate?
     var errorDelegate: ErrorAlertDelegate?
-    var heroes: [Hero?] = []
+    var heroes: [Hero] = []
     
     func numberOfHeroes() -> Int{
         return heroes.count

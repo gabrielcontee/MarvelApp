@@ -16,9 +16,9 @@ class ComicsPopulationTest: XCTestCase {
     
     class DataSourceMock: DetailsDataSourceProtocol {
         
-        var heroes: [Hero?] = []
+        var heroes: [Hero] = []
         
-        var comicsForHero: [Int: [Comic?]] = [:]
+        var comicsForHero: [Int: [Comic]] = [:]
         
         var generateError: Bool = false
         

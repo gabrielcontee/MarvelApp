@@ -46,7 +46,7 @@ class HeroesDataSourceTest: XCTestCase {
         } else{
             XCTAssertNotEqual(self.dataSource.heroes.count, 0)
             XCTAssertNotNil(self.dataSource.heroes)
-            XCTAssertNotEqual(self.dataSource.heroes[0]!.name, "")
+            XCTAssertNotEqual(self.dataSource.heroes[0].name, "")
             XCTAssertNotNil(self.dataSource.heroes.first!)
         }
     }
@@ -73,8 +73,8 @@ class HeroesDataSourceTest: XCTestCase {
         } else{
             XCTAssertNotEqual(self.dataSource.comicsForHero[heroId]?.count, 0)
             XCTAssertNotNil(self.dataSource.comicsForHero[heroId])
-            XCTAssertNotEqual(self.dataSource.comicsForHero[heroId]?.first?!.title, "")
-            XCTAssertNotNil(self.dataSource.comicsForHero[heroId]?.first?!.id)
+            XCTAssertNotEqual(self.dataSource.comicsForHero[heroId]?.first?.title, "")
+            XCTAssertNotNil(self.dataSource.comicsForHero[heroId]?.first?.id)
         }
     }
     

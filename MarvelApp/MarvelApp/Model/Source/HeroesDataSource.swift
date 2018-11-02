@@ -10,13 +10,13 @@ import Foundation
 
 protocol HeroesDataSourceProtocol {
     func fetchHeroes(completion: @escaping (Error?)->())
-    var heroes: [Hero?] {get set}
+    var heroes: [Hero] {get set}
 }
 
 protocol DetailsDataSourceProtocol {
     func fetchComics(id: Int, completion: @escaping (Error?)->())
-    var heroes: [Hero?] {get set}
-    var comicsForHero: [Int: [Comic?]] {get set}
+    var heroes: [Hero] {get set}
+    var comicsForHero: [Int: [Comic]] {get set}
 }
 
 class HeroesDataSource: NSObject, HeroesDataSourceProtocol, DetailsDataSourceProtocol{
@@ -25,8 +25,8 @@ class HeroesDataSource: NSObject, HeroesDataSourceProtocol, DetailsDataSourcePro
     
     private lazy var apiClient = ClientAPI()
     
-    lazy var heroes: [Hero?] = []
-    lazy var comicsForHero: [Id: [Comic?]] = [:]
+    lazy var heroes: [Hero] = []
+    lazy var comicsForHero: [Id: [Comic]] = [:]
     
     // Marvel API does not allow a request with more than 100 characters at once, then we have to split in multiple requests
     private lazy var fetchParameters: [(offset: Int, limit: Int)] = [(0, 100), (100, 100), (200, 100), (300, 100), (400, 100), (500, 100), (600, 100), (700, 100), (800, 100), (900, 100)]

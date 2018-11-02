@@ -47,6 +47,8 @@ class ImageCacheManagerTest: XCTestCase {
         
         let expectation2 = self.expectation(description: "imageCacheRetrieve")
         
+        let newImage: UIImageView = UIImageView()
+        
         newImage.downloadImage(imageURL: mocks.thirdHeroImageString)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {

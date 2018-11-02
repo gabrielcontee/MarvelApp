@@ -16,15 +16,27 @@ class HeroesPopulationTest: XCTestCase {
     
     class DataSourceMock: HeroesDataSourceProtocol {
         
-        var heroes: [Hero?] = []
+        var heroes: [Hero] = []
         
         var generateError: Bool = false
         
         func fetchHeroes(completion: @escaping (Error?) -> ()) {
             // wait time
+            let data = try! JSONSerialization.data(withJSONObject: localData, options: [])
+            let marvelResponse = try! JSONDecoder().decode([Hero].self, from: data)
             
+            heroes = marvelResponse
             completion(nil)
         }
+        
+        let localData: [String : Any] = [
+            "offset": 0,
+            "limit": 20,
+            "total": 1491,
+            "count": 20,
+        ]
+        
+
         
     }
     
@@ -45,13 +57,12 @@ class HeroesPopulationTest: XCTestCase {
     
     func testHeroForIndex() {
         let expectation = self.expectation(description: "heroesForIndex")
-        expectation.expectedFulfillmentCount = 10
         
         viewModel.fetchAllHeroes {
             expectation.fulfill()
         }
         
-        waitForExpectations(timeout: 20, handler: nil)
+        waitForExpectations(timeout: 6, handler: nil)
         XCTAssertNotEqual(viewModel.hero(for: 0)?.name, "")
         XCTAssertNotNil(viewModel.hero(for: 0))
         XCTAssertNotNil(viewModel.hero(for: 0)?.id)
