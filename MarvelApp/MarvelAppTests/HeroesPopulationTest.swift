@@ -71,6 +71,25 @@ class HeroesPopulationTest: XCTestCase {
         
     }
     
+    func testNumberOfHeroes(){
+        
+        let expectation = self.expectation(description: "heroesReceveid")
+        
+        viewModel.fetchHeroes(rowOffset: 0) {
+            expectation.fulfill()
+        }
+        
+        let numberOfHeroes = viewModel.numberOfHeroes()
+        
+        waitForExpectations(timeout: 5) { (error) in
+            if let error = error {
+                XCTFail("Error: \(error)")
+            }
+        }
+        
+        XCTAssertEqual(numberOfHeroes, 15)
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
