@@ -1,6 +1,6 @@
 # MarvelApp
 
-***designed by Gabriel Conte for Agibank selective process***
+***designed by Gabriel Conte***
 
 ### Prerequisites
 
@@ -17,12 +17,13 @@ $ pod instal
 
 ### More infos:
 
-Code coverage: **78.45%**
+Code coverage: **18,79%**
 
 **Highlights**
 - MVVM 
-- Unit Testing
-- UI Testing
+- Offline Unit Testing
 - Xibs
+- CollectionView pagination
+- Swinject for dependence injection
 - CryptoSwift for encryption
 - AlamofireImage for image caching

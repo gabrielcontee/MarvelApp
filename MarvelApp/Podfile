@@ -2,15 +2,21 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '12.0'
 use_frameworks!
 
+def swinject_pods
+    pod 'Swinject'
+    pod 'SwinjectStoryboard'
+end
 
 target 'MarvelApp' do
     pod 'CryptoSwift'
     pod 'AlamofireImage', '~> 3.4'
+    swinject_pods
 end
 
 target 'MarvelAppTests' do
     pod 'CryptoSwift'
     pod 'AlamofireImage', '~> 3.4'
+    swinject_pods
 end
 
 

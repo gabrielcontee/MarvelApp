@@ -12,4 +12,10 @@ struct Comic: Decodable {
     let id: Int
     let title: String?
     let thumbnail: Image?
+    
+    init(id: Int, title: String? = nil) {
+        self.id = id
+        self.title = title
+        self.thumbnail = nil
+    }
 }

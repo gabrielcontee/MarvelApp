@@ -8,31 +8,40 @@
 
 import Foundation
 
-class HeroesDataSource: NSObject{
+protocol HeroesDataSourceProtocol {
+    func fetchHeroes(offset: Int, limit: Int, completion: @escaping (Error?)->())
+    var heroes: [Hero] {get set}
+}
+
+protocol DetailsDataSourceProtocol {
+    func fetchComics(id: Int, completion: @escaping (Error?)->())
+    var heroes: [Hero] {get set}
+    var comicsForHero: [Int: [Comic]] {get set}
+}
+
+class HeroesDataSource: NSObject, HeroesDataSourceProtocol, DetailsDataSourceProtocol{
     
     typealias Id = Int
     
     private lazy var apiClient = ClientAPI()
     
-    lazy var heroes: [Hero?] = []
-    lazy var comicsForHero: [Id: [Comic?]] = [:]
+    lazy var heroes: [Hero] = []
+    lazy var comicsForHero: [Id: [Comic]] = [:]
     
-    // Marvel API does not allow a request with more than 100 characters at once, then we have to split in multiple requests
-    private lazy var fetchParameters: [(offset: Int, limit: Int)] = [(0, 100), (100, 100), (200, 100), (300, 100), (400, 100), (500, 100), (600, 100), (700, 100), (800, 100), (900, 100)]
     
-    func fetchHeroes(completion: @escaping (Error?)->()){
-        for parameter in fetchParameters{
-            apiClient.send(GetHeroes(limit: parameter.limit, offset: parameter.offset)) { [unowned self] (result) in
-                switch result{
-                case .success(let characters):
-                    characters.results.forEach({ (hero) in
-                        self.heroes.append(hero)
-                    })
-                    completion(nil)
-                case .failure(let error):
-                    print(error)
-                    completion(error)
-                }
+    func fetchHeroes(offset: Int, limit: Int, completion: @escaping (Error?)->()){
+        apiClient.send(GetHeroes(limit: limit, offset: offset)) { [unowned self] (result) in
+            switch result{
+            case .success(let characters):
+                print(characters)
+                characters.results.forEach({ (hero) in
+                    self.heroes.append(hero)
+                })
+                print(self.heroes)
+                completion(nil)
+            case .failure(let error):
+                print(error)
+                completion(error)
             }
         }
     }
