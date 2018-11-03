@@ -8,19 +8,17 @@
 
 import Foundation
 
-class HeroesDetailsViewModel: NSObject {
+protocol DetailViewModelDelegate{
+    func comic(for index: Int) -> Comic?
+    func fetchComics(heroId: Int, completion: @escaping ()->())
+    var comics: [Comic] {get set}
+}
+
+class HeroesDetailsViewModel: NSObject, DetailViewModelDelegate {
     
-    private lazy var dataSource = HeroesDataSource()
+    var dataSource: DetailsDataSourceProtocol!
     
-    var comics: [Comic?] = []
-    
-    func fillDescriptionLabel(with string: String) -> String{
-        if string != ""{
-          return string
-        }else{
-            return "There is not an available description for this character until now :("
-        }
-    }
+    var comics: [Comic] = []
     
     func comic(for index: Int) -> Comic?{
         guard comics.isEmpty == false else {
