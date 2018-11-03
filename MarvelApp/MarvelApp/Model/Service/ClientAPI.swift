@@ -55,6 +55,7 @@ class ClientAPI {
         guard let baseUrl = URL(string: request.resourceName, relativeTo: baseEndpointUrl) else {
             fatalError("Bad resourceName: \(request.resourceName)")
         }
+        print(baseUrl.absoluteString)
         
         var components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)!
         

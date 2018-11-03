@@ -29,7 +29,8 @@ class HeroesViewController: UIViewController {
         
         let activityIndicator = UIViewController.displaySpinner(onView: self.view)
         
-        viewModel.fetchAllHeroes { 
+        // Does the initial download
+        viewModel.fetchHeroes(rowOffset: 0) {
             UIViewController.removeSpinner(spinner: activityIndicator)
         }
     }
@@ -70,6 +71,7 @@ extension HeroesViewController: UICollectionViewDataSource{
         
         let heroCell = heroesCollectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CharacterCollectionViewCell.self), for: indexPath) as! CharacterCollectionViewCell
         let data = viewModel.hero(for: indexPath.row)
+        viewModel.fetchHeroes(rowOffset: viewModel.offSetForRow(indexPath.row), completion: nil)
         heroCell.setup(imageURL: data?.thumbnail)
         
         return heroCell
@@ -97,8 +99,7 @@ extension HeroesViewController: HeroesFetchDelegate{
 extension HeroesViewController: ErrorAlertDelegate{
     
     func alertError(msg: String) {
-        let alert = UIAlertController.alertUser(msg) { (action) in
-            self.viewModel.fetchAllHeroes(completion: nil)
+        let alert = UIAlertController.alertUser(msg) { (_) in
         }
         self.present(alert, animated: true, completion: nil)
     }
