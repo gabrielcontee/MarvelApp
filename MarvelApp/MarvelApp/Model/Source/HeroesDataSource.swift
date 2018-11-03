@@ -33,9 +33,11 @@ class HeroesDataSource: NSObject, HeroesDataSourceProtocol, DetailsDataSourcePro
         apiClient.send(GetHeroes(limit: limit, offset: offset)) { [unowned self] (result) in
             switch result{
             case .success(let characters):
+                print(characters)
                 characters.results.forEach({ (hero) in
                     self.heroes.append(hero)
                 })
+                print(self.heroes)
                 completion(nil)
             case .failure(let error):
                 print(error)

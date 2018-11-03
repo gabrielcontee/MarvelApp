@@ -31,7 +31,6 @@ class ClientAPI {
                     // Decode the top level response, and look up the decoded response to see
                     // if it's a success or a failure
                     let marvelResponse = try JSONDecoder().decode(APIResponse<T.Response>.self, from: data)
-                    
                     if let responseContainer = marvelResponse.data {
                         completion(.success(responseContainer))
                     } else if let message = marvelResponse.message {

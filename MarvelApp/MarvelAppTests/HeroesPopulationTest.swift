@@ -18,24 +18,16 @@ class HeroesPopulationTest: XCTestCase {
         
         var heroes: [Hero] = []
         
-        var generateError: Bool = false
-        
         func fetchHeroes(offset: Int, limit: Int, completion: @escaping (Error?) -> ()) {
             // wait time
+            let mockResponse = LocalDataResponse.shared.localData
+            let data = try! JSONSerialization.data(withJSONObject: mockResponse, options: [])
+            let marvelResponse = try! JSONDecoder().decode(ResponseContainer<[Hero]>.self, from: data)
             
-            let data = try! JSONSerialization.data(withJSONObject: localData, options: [])
-            let marvelResponse = try! JSONDecoder().decode([Hero].self, from: data)
+            heroes = marvelResponse.results
             
-            heroes = marvelResponse
             completion(nil)
         }
-        
-        let localData: [String : Any] = [
-            "offset": 0,
-            "limit": 20,
-            "total": 1491,
-            "count": 20,
-        ]
         
     }
     
@@ -61,23 +53,17 @@ class HeroesPopulationTest: XCTestCase {
             expectation.fulfill()
         }
         
-        waitForExpectations(timeout: 6, handler: nil)
-        XCTAssertNotEqual(viewModel.hero(for: 0)?.name, "")
-        XCTAssertNotNil(viewModel.hero(for: 0))
-        XCTAssertNotNil(viewModel.hero(for: 0)?.id)
-        XCTAssertNotNil(viewModel.hero(for: 0)?.name)
+        waitForExpectations(timeout: 5, handler: nil)
+        
+        XCTAssertEqual(viewModel.hero(for: 0)?.name, "3-D Man")
+        XCTAssertEqual(viewModel.hero(for: 0)?.id, 1011334)
+        XCTAssertNotNil(viewModel.hero(for: 0)?.description, "")
         XCTAssertNotNil(viewModel.hero(for: 0)?.thumbnail)
-        XCTAssertNotNil(viewModel.hero(for: 1))
-        XCTAssertNotNil(viewModel.hero(for: 1)?.id)
-        XCTAssertNotNil(viewModel.hero(for: 1)?.name)
+    
+        XCTAssertEqual(viewModel.hero(for: 1)?.name, "A-Bomb (HAS)")
+        XCTAssertEqual(viewModel.hero(for: 1)?.id, 1017100)
+        XCTAssertNotNil(viewModel.hero(for: 1)?.description, "Rick Jones has been Hulk's best bud since day one, but now he's more than a friend...he's a teammate! Transformed by a Gamma energy explosion, A-Bomb's thick, armored skin is just as strong and powerful as it is blue. And when he curls into action, he uses it like a giant bowling ball of destruction! " + "," + "modified" + ":" + "2013-09-18T15:54:04-0400")
         XCTAssertNotNil(viewModel.hero(for: 1)?.thumbnail)
-        XCTAssertNotEqual(viewModel.hero(for: 0)?.id, viewModel.hero(for: 1)?.id)
-        XCTAssertEqual(viewModel.hero(for: 0)?.name, mocks.firstHero.name)
-        XCTAssertEqual(viewModel.hero(for: 0)?.id, mocks.firstHero.id)
-        XCTAssertEqual(viewModel.hero(for: 0)?.description, mocks.firstHero.description)
-        XCTAssertEqual(viewModel.hero(for: 1)?.name, mocks.secondHero.name)
-        XCTAssertEqual(viewModel.hero(for: 1)?.id, mocks.secondHero.id)
-        XCTAssertEqual(viewModel.hero(for: 1)?.description, mocks.secondHero.description)
         
     }
     

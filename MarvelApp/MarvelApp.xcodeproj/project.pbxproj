@@ -31,6 +31,7 @@
 		3146E780217BA64B008F21E5 /* ResponseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E77F217BA64B008F21E5 /* ResponseContainer.swift */; };
 		3146E784217BA6EE008F21E5 /* URLQueryItemEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E783217BA6EE008F21E5 /* URLQueryItemEncoder.swift */; };
 		3146E786217BA70C008F21E5 /* HTTPParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146E785217BA70C008F21E5 /* HTTPParameter.swift */; };
+		31859084218D38FC00C0FF6C /* LocalDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31859083218D38FC00C0FF6C /* LocalDataResponse.swift */; };
 		31C1030F218A4E470065434C /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C1030E218A4E470065434C /* Assembly.swift */; };
 		31C10311218A5DFE0065434C /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C10310218A5DFE0065434C /* Mocks.swift */; };
 		31C7476C217D39F9000E4D71 /* HeroesDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C7476B217D39F9000E4D71 /* HeroesDetailsViewModel.swift */; };
@@ -88,6 +89,7 @@
 		3146E77F217BA64B008F21E5 /* ResponseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseContainer.swift; sourceTree = "<group>"; };
 		3146E783217BA6EE008F21E5 /* URLQueryItemEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryItemEncoder.swift; sourceTree = "<group>"; };
 		3146E785217BA70C008F21E5 /* HTTPParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPParameter.swift; sourceTree = "<group>"; };
+		31859083218D38FC00C0FF6C /* LocalDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataResponse.swift; sourceTree = "<group>"; };
 		31C1030E218A4E470065434C /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		31C10310218A5DFE0065434C /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		31C7476B217D39F9000E4D71 /* HeroesDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				3146E739217B6E00008F21E5 /* Info.plist */,
 				31DB804F217E5B5200D24C9F /* ComicsPopulationTest.swift */,
 				3146E76A217B86F1008F21E5 /* HeroesPopulationTest.swift */,
+				31859083218D38FC00C0FF6C /* LocalDataResponse.swift */,
 				3146E76C217B9887008F21E5 /* HeroesDataSourceTest.swift */,
 				31F82243217C4B1B000C50DF /* ImageCacheManagerTest.swift */,
 			);
@@ -577,6 +580,7 @@
 				3146E76D217B9887008F21E5 /* HeroesDataSourceTest.swift in Sources */,
 				31F82244217C4B1B000C50DF /* ImageCacheManagerTest.swift in Sources */,
 				31DB8050217E5B5200D24C9F /* ComicsPopulationTest.swift in Sources */,
+				31859084218D38FC00C0FF6C /* LocalDataResponse.swift in Sources */,
 				3146E76B217B86F1008F21E5 /* HeroesPopulationTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

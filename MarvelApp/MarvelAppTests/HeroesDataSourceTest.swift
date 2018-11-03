@@ -28,13 +28,13 @@ class HeroesDataSourceTest: XCTestCase {
     func testHeroesFetch() {
         
         let expectation = self.expectation(description: "heroesResult")
-        expectation.expectedFulfillmentCount = 10
     
         var errorFound: Bool = false
         
-        dataSource.fetchHeroes { (error) in
+        dataSource.fetchHeroes(offset: 0, limit: 15) { (error) in
             if error != nil{
                 errorFound = true
+                XCTFail("Characters Fetch Failed")
             }
             expectation.fulfill()
         }
