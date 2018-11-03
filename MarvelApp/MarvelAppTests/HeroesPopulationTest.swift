@@ -20,8 +20,9 @@ class HeroesPopulationTest: XCTestCase {
         
         var generateError: Bool = false
         
-        func fetchHeroes(completion: @escaping (Error?) -> ()) {
+        func fetchHeroes(offset: Int, limit: Int, completion: @escaping (Error?) -> ()) {
             // wait time
+            
             let data = try! JSONSerialization.data(withJSONObject: localData, options: [])
             let marvelResponse = try! JSONDecoder().decode([Hero].self, from: data)
             
@@ -35,8 +36,6 @@ class HeroesPopulationTest: XCTestCase {
             "total": 1491,
             "count": 20,
         ]
-        
-
         
     }
     
@@ -58,7 +57,7 @@ class HeroesPopulationTest: XCTestCase {
     func testHeroForIndex() {
         let expectation = self.expectation(description: "heroesForIndex")
         
-        viewModel.fetchAllHeroes {
+        viewModel.fetchHeroes(rowOffset: 0) {
             expectation.fulfill()
         }
         
