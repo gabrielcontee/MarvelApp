@@ -17,7 +17,7 @@ $ pod instal
 
 ### More infos:
 
-Code coverage: **18,79%**
+Code coverage: **19,5%**
 
 **Highlights**
 - MVVM 
