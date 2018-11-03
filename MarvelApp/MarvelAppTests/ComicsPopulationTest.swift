@@ -14,16 +14,20 @@ class ComicsPopulationTest: XCTestCase {
     
     var mocks = Mocks.shared
     
-    class DataSourceMock: DetailsDataSourceProtocol {
+    class DetailsDataSourceMock: DetailsDataSourceProtocol {
         
         var heroes: [Hero] = []
         
         var comicsForHero: [Int: [Comic]] = [:]
         
-        var generateError: Bool = false
-        
         func fetchComics(id: Int, completion: @escaping (Error?) -> ()) {
             // wait time
+            
+            let mockResponse = ComicsLocalData.shared.localData
+            let data = try! JSONSerialization.data(withJSONObject: mockResponse, options: [])
+            let marvelResponse = try! JSONDecoder().decode(ResponseContainer<[Comic]>.self, from: data)
+            
+            comicsForHero[id] = marvelResponse.results
             
             completion(nil)
         }
@@ -35,8 +39,8 @@ class ComicsPopulationTest: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         viewModel = HeroesDetailsViewModel()
-        let ds = DataSourceMock()
-        viewModel.dataSource = ds
+        let dataSource = DetailsDataSourceMock()
+        viewModel.dataSource = dataSource
     }
     
     override func tearDown() {
@@ -46,26 +50,25 @@ class ComicsPopulationTest: XCTestCase {
     
     
     func testHeroForIndex() {
+        
         let expectation = self.expectation(description: "comicsForIndex")
         
-        let heroId = 1010354
+        // Hank Pym
+        let heroId = 1011490
         
         viewModel.fetchComics(heroId: heroId, completion: {
             expectation.fulfill()
         })
         
-        waitForExpectations(timeout: 15, handler: nil)
-        XCTAssertNotEqual(viewModel.comic(for: 0)?.title, "")
-        XCTAssertNotNil(viewModel.comic(for: 0))
-        XCTAssertNotNil(viewModel.comic(for: 0)?.id)
-        XCTAssertNotNil(viewModel.comic(for: 0)?.title)
-        XCTAssertNotNil(viewModel.comic(for: 0)?.thumbnail)
-        XCTAssertNotEqual(viewModel.comic(for: 0)?.id, viewModel.comic(for: 1)?.id)
+        waitForExpectations(timeout: 5, handler: nil)
         
-        XCTAssertEqual(viewModel.comic(for: 0)?.title, mocks.firstHero.name)
-        XCTAssertEqual(viewModel.comic(for: 0)?.id, mocks.firstHero.id)
-        XCTAssertEqual(viewModel.comic(for: 1)?.title, mocks.secondHero.name)
-        XCTAssertEqual(viewModel.comic(for: 1)?.id, mocks.secondHero.id)
+        XCTAssertEqual(viewModel.comic(for: 0)?.title, "Avengers (1963) #95")
+        XCTAssertEqual(viewModel.comic(for: 0)?.id, 0)
+        XCTAssertNotNil(viewModel.comic(for: 0)?.thumbnail, "")
+        
+        XCTAssertEqual(viewModel.comic(for: 1)?.title, "Avengers (1963) #95")
+        XCTAssertEqual(viewModel.comic(for: 1)?.id, 0)
+        XCTAssertNotNil(viewModel.comic(for: 1)?.thumbnail, "")
     }
     
     func testPerformanceExample() {
