@@ -17,11 +17,13 @@ $ pod instal
 
 ### More infos:
 
-Code coverage: **48,8%**
+Code coverage: **18,79%**
 
 **Highlights**
 - MVVM 
-- Unit Testing
+- Offline Unit Testing
 - Xibs
+- CollectionView pagination
+- Swinject for dependence injection
 - CryptoSwift for encryption
 - AlamofireImage for image caching

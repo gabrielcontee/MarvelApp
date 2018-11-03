@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct LocalDataResponse {
+struct CharactersDataResponse {
     
-    static let shared = LocalDataResponse()
+    static let shared = CharactersDataResponse()
     
     let localData: [String: Any] =
     [

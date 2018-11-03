@@ -20,7 +20,7 @@ class HeroesPopulationTest: XCTestCase {
         
         func fetchHeroes(offset: Int, limit: Int, completion: @escaping (Error?) -> ()) {
             // wait time
-            let mockResponse = LocalDataResponse.shared.localData
+            let mockResponse = CharactersDataResponse.shared.localData
             let data = try! JSONSerialization.data(withJSONObject: mockResponse, options: [])
             let marvelResponse = try! JSONDecoder().decode(ResponseContainer<[Hero]>.self, from: data)
             
@@ -53,7 +53,11 @@ class HeroesPopulationTest: XCTestCase {
             expectation.fulfill()
         }
         
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: 5) { (error) in
+            if let error = error {
+                XCTFail("Error: \(error)")
+            }
+        }
         
         XCTAssertEqual(viewModel.hero(for: 0)?.name, "3-D Man")
         XCTAssertEqual(viewModel.hero(for: 0)?.id, 1011334)

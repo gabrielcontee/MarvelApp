@@ -60,7 +60,11 @@ class ComicsPopulationTest: XCTestCase {
             expectation.fulfill()
         })
         
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: 5) { (error) in
+            if let error = error {
+                XCTFail("Error: \(error)")
+            }
+        }
         
         XCTAssertEqual(viewModel.comic(for: 0)?.title, "Astonishing X-Men (2017) #12")
         XCTAssertEqual(viewModel.comic(for: 0)?.id, 67715)
