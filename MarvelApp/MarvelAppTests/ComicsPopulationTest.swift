@@ -53,8 +53,8 @@ class ComicsPopulationTest: XCTestCase {
         
         let expectation = self.expectation(description: "comicsForIndex")
         
-        // Hank Pym
-        let heroId = 1011490
+        // Ben Parker
+        let heroId = 1009489
         
         viewModel.fetchComics(heroId: heroId, completion: {
             expectation.fulfill()
@@ -62,13 +62,13 @@ class ComicsPopulationTest: XCTestCase {
         
         waitForExpectations(timeout: 5, handler: nil)
         
-        XCTAssertEqual(viewModel.comic(for: 0)?.title, "Avengers (1963) #95")
-        XCTAssertEqual(viewModel.comic(for: 0)?.id, 0)
-        XCTAssertNotNil(viewModel.comic(for: 0)?.thumbnail, "")
+        XCTAssertEqual(viewModel.comic(for: 0)?.title, "Astonishing X-Men (2017) #12")
+        XCTAssertEqual(viewModel.comic(for: 0)?.id, 67715)
+        XCTAssertNotNil(viewModel.comic(for: 0)?.thumbnail)
         
-        XCTAssertEqual(viewModel.comic(for: 1)?.title, "Avengers (1963) #95")
-        XCTAssertEqual(viewModel.comic(for: 1)?.id, 0)
-        XCTAssertNotNil(viewModel.comic(for: 1)?.thumbnail, "")
+        XCTAssertEqual(viewModel.comic(for: 1)?.title, "Cable (2017) #156")
+        XCTAssertEqual(viewModel.comic(for: 1)?.id, 66831)
+        XCTAssertNotNil(viewModel.comic(for: 1)?.thumbnail)
     }
     
     func testPerformanceExample() {
